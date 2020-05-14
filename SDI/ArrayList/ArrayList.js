@@ -100,5 +100,15 @@ if(parseInput == isParsed ){
 
 
  }
+ var stringFruits = ["grapes", "apples", "limes", "lemon", "ball", "carrot", "towel", "laptop", "stove"];
+ var colors = ["purple", "red", "green", "yellow", "red", "orange", "white", "silver", "black"];
+ for (let j = 0; j < stringFruits.length; j++)
+ {
+   
+     console.log("The main color of " + stringFruits[j] + " is " + colors[j] + ".");
+     document.getElementById("randomThingsList").innerHTML += " <p>"+ "The main color of " + stringFruits[j] + " is " + colors[j] + "." +"</p>";
+
+ }
+
    
 } 
