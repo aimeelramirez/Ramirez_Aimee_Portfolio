@@ -1,8 +1,8 @@
 'use strict'
 window.onload = function() {
 
-let inputWantingToBuy;
-let numberWantingToBuy;
+// let inputWantingToBuy;
+// let numberWantingToBuy;
 let input, parseInput;
 let isParsed; 
 let answer;
