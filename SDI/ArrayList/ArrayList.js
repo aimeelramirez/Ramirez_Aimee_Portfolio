@@ -80,12 +80,7 @@ if(parseInput == isParsed ){
  
   for(let a = 0; a < answer; a++){
      let inputBookPrice = prompt(`Please, enter the ${a+1} price as a like 2 for $2 or $2.00:`);
-    //  parseInput = validateString(inputBookPrice);
-    //  isParsed = parseInt(parseInput);
-    //  if(isParsed == undefined || checkNaN == true){
-
-    //     console.log('ERROR');
-    //     answer = validateInt(parseInput, isParsed);
+  
         stringArray.push(+inputBookPrice);
         console.log(stringArray[a]);
         //validate int
@@ -98,23 +93,7 @@ if(parseInput == isParsed ){
        document.getElementById("listPrice").innerHTML += index +") $"+ total[a].toFixed(2) +"<br/>";
         document.getElementById("sum").innerHTML += "<hr/><h3>Total:</h3><h2> $"+ sum.toFixed(2) +"</h2>";
 
-//      }else{
-//      stringArray.push(+parseInput);
-//      console.log(stringArray[a]);
-//      //validate int
-//  //total += parseInt(stringArray[a]);
-//     total.push(+parseInt(stringArray[a]));
-//     sum += total[a];
-
-//      console.log(sum);
-
-//   }
-}
-//   stringArray.forEach(element => {
-//       console.log("element: ",element);
-
-//   });
-
+      }
     }else{
         console.log('ERROR');
     }
