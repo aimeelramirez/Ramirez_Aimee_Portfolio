@@ -10,6 +10,7 @@ let total = [];
  //now to add the number of the array
  let stringArray = [];
  let sum = 0;
+
 //validate string
 const validateString = (input) =>{
     while(input == ""){
@@ -43,9 +44,7 @@ const validateInt = (parseInput, isParsed) =>{
 const validateDecimal = (inputBookPrice) =>{
     //console.log(isParsed +"check 1" + parseInput)
      // set the NaN to have a value
-     isBookParsed = 0.0;
-      //let check = !isNaN(parseFloat(inputBookPrice));
-      //let checkIn = isFinite(inputBookPrice);
+      isBookParsed = 0.0;
       console.log("Sorry, this can only be a number.")
       alert("Sorry, this can only be a number.")
    
@@ -93,7 +92,7 @@ const addBooks = (answer) =>{
     }
     
     //console.log(total+ " total array to add up");
-    
+
     //reduce to sum it up
      sum = total.reduce((a, b) =>{
         return a + b;
@@ -104,15 +103,12 @@ const addBooks = (answer) =>{
      console.log(`sum of all books $${sum.toFixed(2)}`);
      document.getElementById("listPrice").innerHTML +=  `${a+1}`+") $"+ total[a].toFixed(2) +"<br/>";
 
-
       }
       document.getElementById("sum").innerHTML += "<hr/><h3>Total:</h3><h2> $"+ sum.toFixed(2) +"</h2>";
 
-
-
     }
 
-
+// ----- Menu ---- //
 input = prompt("how many books would you like to purchase? (Please input a whole number like 1, 3, or 5)")
 parseInput = validateString(input);
 isParsed = parseInt(parseInput);
