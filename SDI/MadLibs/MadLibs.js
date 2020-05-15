@@ -44,6 +44,7 @@ window.onload = function() {
        
        }
     ///------Menu----////
+    let parseInput;
     let spaces = " ";
     let whoIsLike = "who is like a";
     let hungry = "was hungry for";
@@ -71,11 +72,12 @@ window.onload = function() {
     parseFoodItem = validateString(nameFoodItem);
 
     year = prompt("Enter a year of choice:");
+    parseInput = validateString(year);
 
-    let checkNaN = Number.isNaN(parseFloat(year));
+    let checkNaN = Number.isNaN(parseFloat(parseInput));
 
     if(checkNaN == true || year.length < 4){
-    parseYear = validateDecimal(year);
+    parseYear = validateDecimal(parseInput);
     console.log(parseYear);
     }else if(checkNaN != true){
      parseYear = year;
@@ -83,9 +85,11 @@ window.onload = function() {
 
     }
     moneyYearly = prompt("Enter a cost like $1.25 etc:");
-    checkNaN = Number.isNaN(parseFloat(moneyYearly));
+    parseInput = validateString(moneyYearly);
+
+    checkNaN = Number.isNaN(parseFloat(parseInput));
     if(checkNaN == true ){
-        parseMoneyYearly = validateDecimal(moneyYearly);
+        parseMoneyYearly = validateDecimal(parseInput);
         console.log(parseMoneyYearly);
         }else if(checkNaN != true){
          parseMoneyYearly = moneyYearly;
@@ -95,9 +99,12 @@ window.onload = function() {
        let total = parseFloat(parseMoneyYearly).toFixed(2);
    
        randomNumber = prompt("Input a random number:");
-       checkNaN = Number.isNaN(parseInt(randomNumber));
+       parseInput = validateString(randomNumber);
+
+       checkNaN = Number.isNaN(parseInt(parseInput));
        if(checkNaN == true ){
-        parseRandomNumber = validateInt(randomNumber);}
+        parseRandomNumber = validateInt(parseInput);
+         }
          else if(checkNaN != true){
           parseRandomNumber = randomNumber;
          }
