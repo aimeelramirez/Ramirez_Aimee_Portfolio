@@ -65,7 +65,7 @@ window.onload = function() {
    console.log(`Order ${larCounter} ${storeLar} Shirt(s)`);
    console.log(`Order ${xLarCounter} ${storeXLar} Shirt(s)`);
    console.log(`Order ${xXLarCounter} ${storeXXLar} Shirt(s)`);
-   var stringList = [{smallCounter, storeSm},{medCounter, storeMed}];
+   //var stringList = [{smallCounter, storeSm},{medCounter, storeMed}];
    
     document.getElementById("list").innerHTML = 
     "<hr/><p>Order "+ smallCounter +", "+ storeSm +" Shirt(s)</p>" 
