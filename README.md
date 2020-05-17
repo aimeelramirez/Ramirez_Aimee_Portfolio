@@ -6,10 +6,10 @@
 
 | Projects | Description |
 | ----------- | ----------- |
-| ArrayList | [SDI/ArrayList](./SDI/ArrayList)|
-| Conditionals | [SDI/Conditionals](./SDI/Conditionals)|
-| Functions | [SDI/Functions](./SDI/Functions)|
-| Grocery Calculator| [SDI/GroceryCal](./SDI/GroceryCal)|
-| MadLibs | [SDI/MadLibs](./SDI/MadLibs)|
-| ShirtSizes | [SDI/ShirtSizes](./SDI/ShirtSizes)|
+| ArrayList | [SDItoJS/ArrayList](./SDItoJS/ArrayList)|
+| Conditionals | [SDItoJS/Conditionals](./SDItoJS/Conditionals)|
+| Functions | [SDItoJS/Functions](./SDItoJS/Functions)|
+| Grocery Calculator| [SDItoJS/GroceryCal](./SDItoJS/GroceryCal)|
+| MadLibs | [SDItoJS/MadLibs](./SDItoJS/MadLibs)|
+| ShirtSizes | [SDItoJS/ShirtSizes](./SDItoJS/ShirtSizes)|
 
