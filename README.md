@@ -4,6 +4,9 @@ Link to Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio/>
 
 Clone: <https://github.com/alramirez1/Ramirez_Aimee_Portfolio.git>
 
+Live Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio>
+
+
 ## SDI to JavaScript
 
 | Projects | Description |
@@ -20,4 +23,4 @@ Clone: <https://github.com/alramirez1/Ramirez_Aimee_Portfolio.git>
 | Projects | Description |
 | ----------- | ----------- |
 | Ramirez_Aimee_debug | [debug_assignment3](./debug_assignment3)|
-Live Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio>
+
