@@ -26,4 +26,3 @@ Wordpress Site:
 | Projects | Description |
 | ----------- | ----------- |
 | Ramirez_Aimee_debug | [debug_assignment3](./debug_assignment3)|
-

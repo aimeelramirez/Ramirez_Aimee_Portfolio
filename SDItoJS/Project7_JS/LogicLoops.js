@@ -201,16 +201,17 @@ window.onload = () => {
             }else{
                 break;
             }
-            if (remainder == donutsAmount)
-            {
-                console.log("Donuts are all gone, hope everyone enjoys them!");
-                document.getElementById("list").innerHTML +=  "<h3>Donuts are all gone, hope everyone enjoys them!</h3>";
-
-            }
+        
         }else{
             console.log("That is too many donuts, try again.");
             alert("That is too many donuts, try again.");
         }
 
+    }
+    if (donutsAmount == 0)
+    {
+        console.log("Donuts are all gone, hope everyone enjoys them!");
+        document.getElementById("list").innerHTML +=  "<h3>Donuts are all gone, hope everyone enjoys them!</h3>";
+     
     }
 }
