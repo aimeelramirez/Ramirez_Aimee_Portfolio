@@ -14,7 +14,7 @@ Wordpress Site:
 | Projects | Description |
 | ----------- | ----------- |
 | ArrayList | [SDItoJS/Project1_JS](./SDItoJS/Project1_JS)|
-| Conditionals | [SDItoJS/Project1_JS](./SDItoJS/Project1_JS)|
+| Conditionals | [SDItoJS/Project2_JS](./SDItoJS/Project2_JS)|
 | Functions | [SDItoJS/Project3_JS](./SDItoJS/Project3_JS)|
 | Grocery Calculator| [SDItoJS/Project4_JS](./SDItoJS/Project4_JS)|
 | Logic Loops | [SDItoJS/Project7_JS](./SDItoJS/Project7_JS)|
