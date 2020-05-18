@@ -44,7 +44,7 @@ actual error because no syntax or runtime exception has occurred
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) === " "){ 
 			query = query.substring(1, query.length);
-      
+      debugger
 		};
 		while(query.charAt(query.length-1) === ""){  
 			query = query.substring(0, query.length-1);

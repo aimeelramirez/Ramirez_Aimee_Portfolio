@@ -6,6 +6,8 @@ Clone: <https://github.com/alramirez1/Ramirez_Aimee_Portfolio.git>
 
 Live Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio>
 
+Wordpress Site:
+<https://alramirez1.wordpress.com/>
 
 ## SDI to JavaScript
 
