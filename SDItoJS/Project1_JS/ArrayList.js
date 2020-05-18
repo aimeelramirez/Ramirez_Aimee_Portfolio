@@ -75,7 +75,7 @@ window.onload = function() {
 			let checkNaNBook = Number.isNaN(parseFloat(parseInput));
 
 			//console.log(parseInput + "->" + checkNaNBook);
-			if (checkNaNBook == true) {
+			if (checkNaNBook == true || parseInput < 0) {
 
 				//console.log(a + "# wrong data types caught");
 

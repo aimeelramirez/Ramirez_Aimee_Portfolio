@@ -17,6 +17,7 @@ Wordpress Site:
 | Conditionals | [SDItoJS/Conditionals](./SDItoJS/Conditionals)|
 | Functions | [SDItoJS/Functions](./SDItoJS/Functions)|
 | Grocery Calculator| [SDItoJS/GroceryCal](./SDItoJS/GroceryCal)|
+| ShirtSizes | [SDItoJS/LogicLoops](./SDItoJS/LogicLoops)|
 | MadLibs | [SDItoJS/MadLibs](./SDItoJS/MadLibs)|
 | ShirtSizes | [SDItoJS/ShirtSizes](./SDItoJS/ShirtSizes)|
 

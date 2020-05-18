@@ -1,0 +1,11 @@
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\bin\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.deps.json
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\bin\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.runtimeconfig.json
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\bin\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.runtimeconfig.dev.json
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\bin\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.dll
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\bin\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.pdb
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.csprojAssemblyReference.cache
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.csproj.CoreCompileInputs.cache
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.AssemblyInfoInputs.cache
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.AssemblyInfo.cs
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.dll
+C:\Users\aimee\Desktop\Ramirez_Aimee_LogicLoops\obj\Debug\netcoreapp2.2\Ramirez_Aimee_LogicLoops.pdb

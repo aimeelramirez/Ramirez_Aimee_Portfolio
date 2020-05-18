@@ -34,9 +34,9 @@ window.onload = () =>{
          // set the NaN to have a value
           let isParsed = 0.0;
           console.log("Sorry, this can only be a number(s).")
-          alert("Sorry, this can only be a number(s).")
+          alert("Sorry, this can only be valid number(s).")
        
-           while(input!= isParsed){
+           while(input != isParsed){
     
            input= prompt(`Please enter the right data input`);
            let parseInput = validateString(input);
@@ -50,9 +50,9 @@ window.onload = () =>{
         let convertInput = "";
         let checkNaN = Number.isNaN(parseFloat(parseInput));
     
-        if (checkNaN == true) {
+        if (checkNaN == true || parseInput < 0) {
           convertInput = validateDecimal(parseInput);
-        } else if (checkNaN != true) {
+        } else if (checkNaN != true || parseInput > -1) {
           convertInput = parseInput;
         }
         return convertInput;
@@ -60,10 +60,10 @@ window.onload = () =>{
       const validateNaNInt = (parseInput) => {
         let convertInput = "";
         let checkNaN = Number.isNaN(parseInt(parseInput));
-    
-        if (checkNaN == true) {
+        alert(parseInt(parseInput)+ "?" + parseInput);
+        if (checkNaN == true || parseInt(parseInput) != parseInput || parseInput < 0) {
           convertInput1 = validateInt(parseInput);
-        } else if (checkNaN != true) {
+        } else if (checkNaN != true || parseInput > -1 ) {
           convertInput = parseInput;
         }
         return convertInput;

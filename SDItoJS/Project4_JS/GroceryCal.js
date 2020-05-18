@@ -31,29 +31,26 @@ window.onload = () =>{
        
        }
 
-       const validateDecimal = (input) =>{
-         // set the NaN to have a value
-          let isParsed = 0.0;
-          console.log("Sorry, this can only be a number(s).")
-          alert("Sorry, this can only be a number(s).")
-       
-           while(input!= isParsed){
+       const validateDecimal = (input) => {
+        // set the NaN to have a value
+        let isParsed = 0.0;
+        console.log("Sorry, this can only be a number(s).")
+        alert("Sorry, this can only be valid number(s).")
     
-           input= prompt(`Please enter the right data input`);
-           let parseInput = validateString(input);
-            isParsed = parseFloat(parseInput);
-    
-           }
-           return isParsed;
-       
-       }
-       const validateNaNDecimal = (parseInput) => {
+        while (input != isParsed) {
+          input = prompt(`Please enter the right data input`);
+          let parseInput = validateString(input);
+          isParsed = parseFloat(parseInput);
+        }
+        return isParsed;
+      }
+      const validateNaNDecimal = (parseInput) => {
         let convertInput = "";
         let checkNaN = Number.isNaN(parseFloat(parseInput));
     
-        if (checkNaN == true) {
+        if (checkNaN == true || parseInput < 0) {
           convertInput = validateDecimal(parseInput);
-        } else if (checkNaN != true) {
+        } else if (checkNaN != true || parseInput > -1) {
           convertInput = parseInput;
         }
         return convertInput;
@@ -61,10 +58,10 @@ window.onload = () =>{
       const validateNaNInt = (parseInput) => {
         let convertInput = "";
         let checkNaN = Number.isNaN(parseInt(parseInput));
-    
-        if (checkNaN == true) {
+        //alert(parseInt(parseInput)+ "?" + parseInput);
+        if (checkNaN == true || parseInt(parseInput) != parseInput || parseInput < 0) {
           convertInput1 = validateInt(parseInput);
-        } else if (checkNaN != true) {
+        } else if (checkNaN != true || parseInput > -1 ) {
           convertInput = parseInput;
         }
         return convertInput;
@@ -94,7 +91,7 @@ window.onload = () =>{
    console.log("Quantity of Bananas: ");
    input = prompt("Quantity of Bananas: ");
    parseInput = validateString(input);
-   convertInput = validateNaNDecimal(parseInput);
+   convertInput = validateNaNInt(parseInput);
 
    let amount = convertInput * convertBanana;
    let convertAmount = amount.toFixed(2);
@@ -102,7 +99,7 @@ window.onload = () =>{
    console.log("Quantity of Beef Brisket: ");
    input2 = prompt("Quantity of Beef Brisket: ");
    parseInput = validateString(input2);
-   convertInput2 = validateNaNDecimal(parseInput);
+   convertInput2 = validateNaNInt(parseInput);
 
    let amount2 = convertInput2 * convertBeef;
    let convertAmount2 = amount2.toFixed(2);
@@ -110,16 +107,16 @@ window.onload = () =>{
    console.log("Quantity of Apple Pie: ");
    input3 = prompt("Quantity of Apple Pie: ");
    parseInput = validateString(input3);
-   convertInput3 = validateNaNDecimal(parseInput);
+   convertInput3 = validateNaNInt(parseInput);
 
 
    let amount3 = convertInput3 * convertApple;
    let convertAmount3 = amount3.toFixed(2);
 
    //give them what they asked for upon request
-   let printStringBanana ="Amount Bananas you picked: " + input + " will cost you $" + convertAmount;
-   let printStringBeef ="Amount Beef Brisket you picked: " + input2  + " will cost you $" + convertAmount2;
-   let printStringApple = "Amount Apples you picked: " + input3 + " will cost you $" + convertAmount3;
+   let printStringBanana ="Amount Bananas you picked: " +  Math.round(convertInput) + " will cost you $" + convertAmount;
+   let printStringBeef ="Amount Beef Brisket you picked: " + Math.round(convertInput2)  + " will cost you $" + convertAmount2;
+   let printStringApple = "Amount Apples you picked: " +  Math.round(convertInput3) + " will cost you $" + convertAmount3;
    console.log(printStringBanana);
    console.log(printStringBeef);
    console.log(printStringApple);

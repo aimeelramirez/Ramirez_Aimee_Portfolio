@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\aimee\\Desktop\\Ramirez_Aimee_LogicLoops\\Ramirez_Aimee_LogicLoops.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\aimee\\Desktop\\Ramirez_Aimee_LogicLoops\\Ramirez_Aimee_LogicLoops.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\aimee\\Desktop\\Ramirez_Aimee_LogicLoops\\Ramirez_Aimee_LogicLoops.csproj",
+        "projectName": "Ramirez_Aimee_LogicLoops",
+        "projectPath": "C:\\Users\\aimee\\Desktop\\Ramirez_Aimee_LogicLoops\\Ramirez_Aimee_LogicLoops.csproj",
+        "packagesPath": "C:\\Users\\aimee\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aimee\\Desktop\\Ramirez_Aimee_LogicLoops\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\aimee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
