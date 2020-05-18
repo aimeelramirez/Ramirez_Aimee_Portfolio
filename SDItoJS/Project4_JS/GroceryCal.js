@@ -60,12 +60,13 @@ window.onload = () =>{
         let checkNaN = Number.isNaN(parseInt(parseInput));
         //alert(parseInt(parseInput)+ "?" + parseInput);
         if (checkNaN == true || parseInt(parseInput) != parseInput || parseInput < 0) {
-          convertInput1 = validateInt(parseInput);
+          convertInput = validateInt(parseInput);
         } else if (checkNaN != true || parseInput > -1 ) {
           convertInput = parseInput;
         }
         return convertInput;
       }
+
 
    let salesTax;
    let input, input2, input3;

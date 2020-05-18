@@ -58,14 +58,15 @@ window.onload = () => {
   const validateNaNInt = (parseInput) => {
     let convertInput = "";
     let checkNaN = Number.isNaN(parseInt(parseInput));
-
-    if (checkNaN == true) {
-      convertInput1 = validateInt(parseInput);
-    } else if (checkNaN != true) {
+    //alert(parseInt(parseInput)+ "?" + parseInput);
+    if (checkNaN == true || parseInt(parseInput) != parseInput || parseInput < 0) {
+      convertInput = validateInt(parseInput);
+    } else if (checkNaN != true || parseInput > -1 ) {
       convertInput = parseInput;
     }
     return convertInput;
   }
+
 
   ///------ Problem #1: Free Shipping----///
 
