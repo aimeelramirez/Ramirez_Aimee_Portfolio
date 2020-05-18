@@ -123,7 +123,7 @@ window.onload = () => {
   // let's check if there is a no to yes to answer.
   yes = "yes";
   no = "no";
-  if (person != yes) {
+  if (person.toLowerCase() != yes) {
     //passing the total over
     console.log("This is total: " + total);
     // if person says no or not yes.
@@ -132,8 +132,9 @@ window.onload = () => {
     "<h2>Mall Discount:</h2><hr/><li>$" + totalFirstInput.toFixed(2)+ "</li>" + 
     "<li>$" + totalSecondInput.toFixed(2)+ "</li>" +
     "<hr/><p>Total: $" + total + "</p>";
-  } else if (person != no) {
+  } else if (person.toLowerCase() == yes) {
     console.log("This person said yes!  this is a mall employee so please offer the discount");
+    alert("This person said yes!  this is a mall employee so please offer the 10% discount");
 
     let tenOverHundred = 0.10;
     let tenPerent = total * tenOverHundred;
