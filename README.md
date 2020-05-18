@@ -13,13 +13,13 @@ Wordpress Site:
 
 | Projects | Description |
 | ----------- | ----------- |
-| ArrayList | [SDItoJS/Project1_JS](./SDItoJS/ArrayList)|
-| Conditionals | [SDItoJS/Project2_JS](./SDItoJS/Conditionals)|
-| Functions | [SDItoJS/Project3_JS](./SDItoJS/Functions)|
-| Grocery Calculator| [SDItoJS/Project4_JS](./SDItoJS/GroceryCal)|
-| Logic Loops | [SDItoJS/Project7_JS](./SDItoJS/LogicLoops)|
-| MadLibs | [SDItoJS/Project5_JS](./SDItoJS/MadLibs)|
-| ShirtSizes | [SDItoJS/Project6_JS](./SDItoJS/ShirtSizes)|
+| ArrayList | [SDItoJS/Project1_JS](./SDItoJS/Project1_JS)|
+| Conditionals | [SDItoJS/Project1_JS](./SDItoJS/Project1_JS)|
+| Functions | [SDItoJS/Project3_JS](./SDItoJS/Project3_JS)|
+| Grocery Calculator| [SDItoJS/Project4_JS](./SDItoJS/Project4_JS)|
+| Logic Loops | [SDItoJS/Project7_JS](./SDItoJS/Project7_JS)|
+| MadLibs | [SDItoJS/Project5_JS](./SDItoJS/Project5_JS)|
+| ShirtSizes | [SDItoJS/Project6_JS](./SDItoJS/Project6_JS)|
 
 ## Debugging Assignment #3
 

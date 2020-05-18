@@ -60,7 +60,7 @@ window.onload = () =>{
       const validateNaNInt = (parseInput) => {
         let convertInput = "";
         let checkNaN = Number.isNaN(parseInt(parseInput));
-        alert(parseInt(parseInput)+ "?" + parseInput);
+        //alert(parseInt(parseInput)+ "?" + parseInput);
         if (checkNaN == true || parseInt(parseInput) != parseInput || parseInput < 0) {
           convertInput1 = validateInt(parseInput);
         } else if (checkNaN != true || parseInput > -1 ) {
