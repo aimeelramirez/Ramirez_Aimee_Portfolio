@@ -74,7 +74,4 @@ window.onload = function() {
 		"<hr/><p>Order " + xLarCounter + ", " + storeXLar + " Shirt(s)</p>" +
 		"<hr/><p>Order " + xXLarCounter + ", " + storeXXLar + " Shirt(s)</p>";
 
-
-
-
 }

@@ -52,6 +52,7 @@ actual error because no syntax or runtime exception has occurred
 			//adding the closing brackets -ar
 		};
 		
+		
 		// Check search length, must have 3 characters
 		 if(query.length < 3){
 			/// closing quotes -ar

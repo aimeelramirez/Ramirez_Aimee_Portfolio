@@ -111,5 +111,4 @@ window.onload = function() {
 		whoIsLike + spaces + parseAnimal + spaces + hungry + spaces + parseFoodItem + " which costs $" + total + ".";
 	console.log(sentenceStruct);
 	document.getElementById("list").innerHTML += "<h3>" + sentenceStruct + "</h3>";
-
 }
