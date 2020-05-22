@@ -1,0 +1,17 @@
+body{
+ margin: 2%;
+}
+#header{
+    text-align: center;
+    background-color: lavenderblush;
+}
+#print {
+    border:1px solid black;
+    width:100%;
+    height:100%;
+}
+table {
+    border:1px solid grey;
+    width:100%;
+    height:100%;
+}
