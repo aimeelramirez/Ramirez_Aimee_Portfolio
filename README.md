@@ -26,3 +26,9 @@ Wordpress Site:
 | Projects | Description |
 | ----------- | ----------- |
 | Ramirez_Aimee_debug | [debug_assignment3](./debug_assignment3)|
+
+## JSON Practice
+
+| Projects | Description |
+| ----------- | ----------- |
+| Ramirez_Aimee_json | [jsdemo](./jsonDEMO)|
