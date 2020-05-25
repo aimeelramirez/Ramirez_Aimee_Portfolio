@@ -11,16 +11,15 @@ const createCounter = () => {
       getCount: () => count.toLocaleString()
     });
   };
-  const counter = createCounter();
+const counter = createCounter();
 function getClick(){
     counter.click();
     console.log("sum: ",
     counter.getCount()
   );
-      return document.getElementById("sum").innerHTML = '<p>' + counter.getCount() + '</p>';
+return document.getElementById("sum").innerHTML = '<p> Number of times you clicked submit:' + counter.getCount() + '</p>';
   
 }
-
 
 
 

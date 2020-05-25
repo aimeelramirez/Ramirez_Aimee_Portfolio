@@ -3,12 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Object Oriented Programming</title>
-   <!-- keeping the scripts together -->
-    <script type="text/javascript" src="js/data.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
     <script type="text/javascript" src="js/test.js"></script>
 
-   <!-- keeping the scripts together -->
    <!-- styles together -->
     <link rel="stylesheet" href="styles/style.css">
    <!-- styles together -->
@@ -17,9 +14,24 @@
 <body>
 
 <h1 id="header">Object Oriented Programming</h1>
-<button onclick=getClick();> Click me</button>
-<h1 id="sum"></h1>
+<h2>Check console to see it listed! </h2>
+
+<h2>List of Employees:</h2>
+
+<div id="test"></div>
+		
+<div id="searchwrap">
+    <form name="searchForm" id="searchForm">
+        <input type="text" name="main" id="main" />
+        <input type="text" name="main1" id="main1" />
+        <input type="submit" onclick= getClick(); id="submit">
+    </form>
+</div>
+<p> Add a person to employee list above.</p>
+
+<div id="results">
+</div>
+<p id="sum"></p>
 
 </body>
-
-</html>
+<script type="text/javascript" src="js/main.js"></script>
