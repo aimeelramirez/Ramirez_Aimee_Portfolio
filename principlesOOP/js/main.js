@@ -79,6 +79,9 @@
 	}
 
 	class FullNames extends Employee {
+		constructor(firstName, lastName) {
+			super(firstName, lastName);
+		  }
 		// pass the super first name method in as it extends
 		static fullNamesMethod(firstName, lastName) {
 			return super.fullNamesMethod(FirstName.firstNameMethod(firstName), LastName.lastNameMethod(lastName));
@@ -126,7 +129,7 @@
 		query = mainInput.value;
 		query1 = mainInput1.value;
 
-	//	debugger
+		debugger
 		validate(query, query1);
 		return false;
 	};
