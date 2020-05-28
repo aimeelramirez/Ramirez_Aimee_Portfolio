@@ -9,6 +9,13 @@ Live Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio>
 Wordpress Site:
 <https://alramirez1.wordpress.com/>
 
+## Final Project
+
+| Projects | Description |
+| ----------- | ----------- |
+| finalProject in JavaScript | [JavaScript](./finalProject)|
+| finalProject in  C# | [C#]|
+
 ## SDI to JavaScript
 
 | Projects | Description |
@@ -32,3 +39,4 @@ Wordpress Site:
 | Projects | Description |
 | ----------- | ----------- |
 | Ramirez_Aimee_json | [jsdemo](./jsonDEMO)|
+
