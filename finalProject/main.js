@@ -182,7 +182,7 @@ window.onload = () => {
                     items = document.getElementById("data");
                     
                     //items.className = "data-click";
-                   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart:</p><hr/>';
+                   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
 
 					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
 						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
