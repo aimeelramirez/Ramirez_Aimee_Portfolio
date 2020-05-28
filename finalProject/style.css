@@ -8,3 +8,9 @@ img{
     height: 600px;
     overflow: scroll;
 }
+.test{
+    border:1px solid black;
+}
+.test:hover{
+    border:1px solid blue;
+}

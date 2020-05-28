@@ -32,7 +32,10 @@ window.onload = () => {
 		firstName: [],
 		lastName: []
 	};
-	let newPlayer = "";
+
+	let array = [];
+	let selPlayer = "";
+
 	let count = 0;
 	class Player {
 		constructor(firstName, lastName) {
@@ -59,10 +62,6 @@ window.onload = () => {
 		static fullNamesMethod(firstName, lastName) {
 			getFullNames.firstName.push(firstName);
 			getFullNames.lastName.push(lastName);
-			for (let i = 0; i < getFullNames.firstName.length; i++) {
-				newPlayer = new Player(firstName, lastName);
-
-			}
 			return firstName + lastName;
 		}
 
@@ -97,50 +96,86 @@ window.onload = () => {
 			return null;
 		};
 
-		//	console.log(FullNames.fullNamesMethod(FirstName.firstNameMethod(query),LastName.lastNameMethod(query1)))
-		//  let checkLastName = validateStringLastName(firstName.state.lastName);
-		//	Player.state.push(FirstName.firstNameMethod(query))	
+
 		count += 1;
+		var playersList = document.getElementById("test");
 		if (query == "") {
 			let getFirstName = validateStringName(query);
 			//this is to get the name if valid
-			document.getElementById("test").innerHTML += '<p> ' + count + ') ' + FullNames.fullNamesMethod(getFirstName, query1) + '</p><hr/>';
+			playersList.innerHTML += '<p class="test"> ' + FullNames.fullNamesMethod(getFirstName, query1) + '</p>';
 
 		} else if (query1 == "") {
 			let getLastName = validateStringName(query1);
 			//this is to get the name if valid
-			document.getElementById("test").innerHTML += '<p> ' + count + ') ' + FullNames.fullNamesMethod(query, getLastName) + '</p><hr/>';
+			playersList.innerHTML += '<p class="test">' + FullNames.fullNamesMethod(query, getLastName) + '</p>';
 
 		} else if (query1 != "" && query != "") {
-			document.getElementById("test").innerHTML += '<p> ' + count + ') ' + FullNames.fullNamesMethod(query, query1) + '</p><hr/>';
+			playersList.innerHTML += '<p class="test">' + FullNames.fullNamesMethod(query, query1) + '</p>';
 			//console.log(getFullNames.firstName.length)
 
 			//checking first name is stored in constructor; 
 		}
 
-		let newI = 0;
-		for (let i = 0; i < newPlayer._getFullNames.firstName.length; i++) {
-			newI = i + 1;
-			console.log(`Full name of ${newI})\n ${newPlayer._getFullNames.firstName[i]} ${newPlayer._getFullNames.lastName[i]}`)
-			if (newPlayer._getFullNames.firstName[i] != "") {
-				document.getElementById("test").innerHTML += '<p> Select to what you would like to grow:</p><hr/>';
+		//console.log(playersList)
+
+		let newPlayer = new Array();
+		for (let key in getFullNames.firstName) {
+			newPlayer.push({
+				key: parseInt(key),
+				data: getFullNames.firstName[key]
+			});
+
+        }
+        //get the list of players to be seen upon selecting
+		console.log(newPlayer)
+
+		const cells = document.getElementsByClassName('test');
+
+        let showGreeting = document.getElementById("greeting");
+        //prompt new greeting on selection
+		showGreeting.innerHTML = '<p>Please select your player:</p><hr/>';
+
+		let greeting = document.getElementsByClassName('greeting');
+
+
+		for (let cell of cells) {
+
+			cell.onclick = function() {
+            console.log("selected player", cell.textContent);
+            selPlayer = cell.textContent;
+
+			alert(`Current Player Selected: ${selPlayer}`);
+			showGreeting.innerHTML = '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
+				                     '<button class="delete"id="delete">Exit Application</button><hr/>';
+
+
+			}
+		}
+
+		//const picked = document.getElementsByClassName('picked');
+		for (let item of greeting) {
+			item.onclick = function() {
+				alert("Exiting application.");
+				//  item.parentNode.removeChild(item);
+				location.reload();
+				return false;
+
 
 			}
 
 		}
-
-    };
-    var submitted = document.getElementById('submit');
+	};
+	var submitted = document.getElementById('submit');
 
 	submitted.onclick = function() {
-        query = mainInput.value;
+		query = mainInput.value;
 		query1 = mainInput1.value;
 
 		validate(query, query1);
 		return false;
 
 
-    }
+	}
 
 
 
@@ -153,45 +188,40 @@ window.onload = () => {
 
 	}
 	// debugger
-	console.log(storage)
+    console.log("this is data:", storage)
+
+    /* another way to map and see the data */
 	// const showNames = storage.map(nameElement => {  
 	//      return '<div key=' + `${nameElement}` + '><p>'+`${nameElement.name}` +'</p>'
 	//      +'<br/> <img src="'+  nameElement.data.image +'"/></br></br> See more Details:'+ nameElement.data.download_link+'</p>'
 	//  +'</div>'}
-	//  )
+    //  )
+    
 	var item = [];
 	for (let m = 0; m < storage.length; m++) {
 
 		//getting readable data
-		//console.log(storage[m])
-		//document.getElementById("data").innerHTML += showNames;
-        var items = []
-        //show the data
+        //document.getElementById("data").innerHTML += showNames;
+        
+		var items = []
+		//show the data
 		items = document.getElementById("data");
 		items.className = "data-click";
 		items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
 			'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
 
-
-		// var spanHolder = document.getElementById('span-holder');
-		// spanHolder.append(item[m]);
- //debugger
-
 	}
-	for (let s = 0; s < storage.length; s++) {
-      //s for select
-		const cells = document.getElementsByClassName('item');
-		item[s] = document.getElementById("item");
-		//console.log(cells.length)
-		for (let cell of cells) {
-			//console.log(cell)
-			cell.onclick = function() {
-				let status = cell.getElementsByTagName('p');
-				console.log(status.name.innerText);
-				alert(status.name.innerText);
+	//s for select
+	const cells = document.getElementsByClassName('item');
+	//item[s] = document.getElementById("item");
+	//console.log(cells.length)
+	for (let cell of cells) {
+		//console.log(cell)
+		cell.onclick = function() {
+			let status = cell.getElementsByTagName('p');
+			console.log(status.name.innerText);
+			alert(status.name.innerText);
 
-
-			}
 		}
 	}
 }
