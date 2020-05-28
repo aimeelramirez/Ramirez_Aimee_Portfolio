@@ -129,15 +129,18 @@ window.onload = () => {
 
 		}
 
-	};
+    };
+    var submitted = document.getElementById('submit');
 
-	document.forms[0].onsubmit = function() {
-		query = mainInput.value;
+	submitted.onclick = function() {
+        query = mainInput.value;
 		query1 = mainInput1.value;
 
 		validate(query, query1);
 		return false;
-	};
+
+
+    }
 
 
 
