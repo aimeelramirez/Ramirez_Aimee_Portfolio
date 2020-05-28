@@ -121,7 +121,10 @@ window.onload = () => {
 
 		//console.log(playersList)
 
-		let newPlayer = new Array();
+        let newPlayer = new Array();
+        var cart = [];
+        const storage = [];
+
 		for (let key in getFullNames.firstName) {
 			newPlayer.push({
 				key: parseInt(key),
@@ -150,7 +153,7 @@ window.onload = () => {
 				alert(`Current Player Selected: ${selPlayer}`);
 				showGreeting.innerHTML = '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
 					'<button class="delete"id="delete">Exit Application</button><hr/>';
-				const storage = [];
+
 				for (let key in data.json.datasets) {
 					storage.push({
 						name: key,
@@ -169,8 +172,7 @@ window.onload = () => {
 
 				var item = [];
 				//console.log("this is data:", storage)
-				showGreeting.innerHTML = '<p>Select the Plant Name for More Infomation:</p><hr/>';
-
+           
 				for (let m = 0; m < storage.length; m++) {
 
 					//getting readable data
@@ -178,8 +180,11 @@ window.onload = () => {
 
 					var items = []
 					//show the data
-					items = document.getElementById("data");
-					items.className = "data-click";
+                    items = document.getElementById("data");
+                    
+                    //items.className = "data-click";
+                   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart:</p><hr/>';
+
 					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
 						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
 
@@ -189,17 +194,106 @@ window.onload = () => {
 				//item[s] = document.getElementById("item");
 				//console.log(cells.length)
 				for (let cell of cells) {
-					//console.log(cell)
+                    //console.log(cell)
+                    //e upon event
+                    let  e = 0;  
 					cell.onclick = function() {
+              
+
 						let status = cell.getElementsByTagName('p');
-						console.log(status.name.innerText);
-						alert(status.name.innerText);
+                        console.log(status.name.innerText);
+                         let plantName = [];
+                         plantName.push(status.name.innerText);
+                         for (let key in plantName) {
+                             cart.push({
+                               // id: parseInt(e) + 1,
+                                name: plantName[key]
+                            });
+        
+                        }
+                        
+                        alert(status.name.innerText);
+                        cart.forEach((i,count) =>{
+                            count = e += 1;
+                            console.log("cart:" + count + ") " +i);
+
+                        })
+                        
 
 					}
 				}
 
 			}
 
+            const getCart = document.getElementsByClassName('cart');
+            //const getCartImg = document.getElementsByTagName('img');
+          let showImg =  document.getElementById("cart").style.visibility = "visible";
+          let show =  document.getElementById("list").style.visibility = "hidden";
+          const  getList = [];
+     
+            for (let seeds of getCart) {
+                //console.log(cell)
+                let  c = -1;  
+                let  index = 0;  
+                let  find = 0; 
+                let counter = 0; 
+
+
+              const showList = function(){ 
+                  //seeds.addEventListener('click', function (e) {                   console.log("click")
+                    console.log("show");
+                    let status = cell.getElementsByTagName('p');
+
+                   show =  document.getElementById("list").style.visibility = "visible";
+
+                   // console.log("seeds in cart:", seeds);
+                   for(let l = 0; l < cart.length; l++){
+                    counter = c += 1;
+                    index =  find += 1;
+                    //console.log("l:" +  l + "< count: " + counter) ;
+                   // console.log("cart:" +  cart[l]+ " ? count: " + counter) ;
+                 
+                      if(l > 0){
+                       // console.log("cart:" +  cart + "count: " + counter) ;
+                        getList[l] = document.getElementById("list");
+                        console.log(l);
+                        
+                        cart.forEach((item )=>{
+                            getList[l].innerHTML += '<li>'+ item.name +'</li><hr/>';
+                        })
+    
+                          //console.log( getList[l])
+                          console.log(cart[l].name)
+                       } 
+                
+                   }
+                   
+                   
+                //})
+            }
+               const hideList =() => { 
+                   console.log("hide")
+                   cart.splice(0, cart.length)
+
+                //    seeds.addEventListener('click', function (e) {
+                   showImg =  document.getElementById("cart").style.visibility = "visible";
+                   show =  document.getElementById("list").style.visibility = "hidden";
+                    // document.getElementById("list").style.display = "none";
+
+                //   });
+                }
+            // Toggle element visibility
+            seeds.addEventListener('click', function (e) {
+                   if(show == "hidden"){
+                       showList();
+                      
+                   }else if(show != "hidden") {
+
+                   hideList();
+                   }
+              });
+
+        }
 			//const picked = document.getElementsByClassName('picked');
 			for (let item of greeting) {
 				item.onclick = function() {
