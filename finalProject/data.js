@@ -137,3 +137,9 @@ const data = {
     }
     }
    }
+
+   /* 
+   References:
+   Quantitative Plant: Quantitative Plant, Quantitative Plant | Quantitative Plant, http://www.quantitative-plant.org/, 
+   [API] http://www.quantitative-plant.org/api?type=tool&field=organ,automation,licence&q=leaf,automated,freeware 
+   */
