@@ -252,7 +252,7 @@ window.onload = () => {
                    show =  document.getElementById("list").style.visibility = "visible";
                    // console.log("seeds in cart:", seeds);
 
-                   for(let l = 0; l < cart.length; l++){
+                   for(let l = 0; l <= cart.length; l++){
                     counter = c += 1;
                     index =  find += 1;
                     //console.log("l:" +  l + "< count: " + counter) ;
