@@ -1,0 +1,10 @@
+img{
+    width:100px;
+    height:100px;
+}
+#data{
+    background-color: lightblue;
+    width: 50%;
+    height: 600px;
+    overflow: scroll;
+}
