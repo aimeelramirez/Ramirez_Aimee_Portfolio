@@ -13,8 +13,9 @@ Wordpress Site:
 
 | Projects | Description |
 | ----------- | ----------- |
-| finalProject in JavaScript | [JavaScript](./finalProject)|
-| finalProject in  C# | [C#]|
+| Final Project in JavaScript | [JavaScript](./finalProject)|
+| Final Project in  C# | [C#]|
+| Proposal | [proposal](./Ramirez_Aimee_Proposal.pdf)|
 
 ## SDI to JavaScript
 
