@@ -122,7 +122,7 @@ window.onload = () => {
 		//console.log(playersList)
 
         let newPlayer = new Array();
-        var cart = [];
+        let cart = new Array();
         const storage = [];
 
 		for (let key in getFullNames.firstName) {
@@ -223,9 +223,14 @@ window.onload = () => {
 					}
 				}
 
-			}
+            }
+            // Array.prototype.remove = function(from, to) {
+            //     var rest = this.slice((to || from) + 1 || this.length);
+            //     this.length = from < 0 ? this.length + from : from;
+            //     return this.push.apply(this, rest);
+            //   };
 
-            const getCart = document.getElementsByClassName('cart');
+          const getCart = document.getElementsByClassName('cart');
             //const getCartImg = document.getElementsByTagName('img');
           let showImg =  document.getElementById("cart").style.visibility = "visible";
           let show =  document.getElementById("list").style.visibility = "hidden";
@@ -245,8 +250,8 @@ window.onload = () => {
                     let status = cell.getElementsByTagName('p');
 
                    show =  document.getElementById("list").style.visibility = "visible";
-
                    // console.log("seeds in cart:", seeds);
+
                    for(let l = 0; l < cart.length; l++){
                     counter = c += 1;
                     index =  find += 1;
@@ -259,21 +264,34 @@ window.onload = () => {
                         console.log(l);
                         
                         cart.forEach((item )=>{
-                            getList[l].innerHTML += '<li>'+ item.name +'</li><hr/>';
+                            getList[l].innerHTML += '<p>'+ item.name +'</p><hr/>';
                         })
     
                           //console.log( getList[l])
-                          console.log(cart[l].name)
+                          //console.log(cart[l].name)
                        } 
+                      
                 
                    }
                    
                    
                 //})
             }
-               const hideList =() => { 
+               const deleteList =() => { 
                    console.log("hide")
-                   cart.splice(0, cart.length)
+                   alert("Emptying out the cart.")
+                   cart = [];
+                   cart = new Array();
+                  console.log(cart);
+                  show = '';
+                  document.getElementById("list").innerHTML = "";
+
+                  
+                //    for(let i = 0; i < getList.length; i++){
+
+                //    }
+                  
+
 
                 //    seeds.addEventListener('click', function (e) {
                    showImg =  document.getElementById("cart").style.visibility = "visible";
@@ -281,19 +299,22 @@ window.onload = () => {
                     // document.getElementById("list").style.display = "none";
 
                 //   });
+                return cart;
                 }
             // Toggle element visibility
             seeds.addEventListener('click', function (e) {
                    if(show == "hidden"){
                        showList();
                       
-                   }else if(show != "hidden") {
+                   }else{
+                
+                   deleteList();
 
-                   hideList();
                    }
               });
 
         }
+   
 			//const picked = document.getElementsByClassName('picked');
 			for (let item of greeting) {
 				item.onclick = function() {
