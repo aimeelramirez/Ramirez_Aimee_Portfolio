@@ -1,3 +1,6 @@
+body{
+    z-index: 0;
+}
 img{
     width:100px;
     height:100px;
@@ -14,7 +17,12 @@ img{
 .test:hover{
     border:1px solid blue;
 }
-/* #cart{
-   // border:1px solid blue;
-
-} */
+.circle{
+    margin-left: 60%;
+     width: 20px;
+     height: 20px;
+     border-radius: 55%;
+     border:1px solid red;
+     color: black;
+     font-size: 18px;
+    }

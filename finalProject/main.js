@@ -8,11 +8,10 @@ window.onload = () => {
 	var resultsDIV = document.getElementById("results"),
 		mainInput = document.forms[0].main,
 		mainInput1 = document.forms[0].main1;
-
+       
 	var input;
 	var query = mainInput.value;
 	var query1 = mainInput1.value;
-
 	const validateString = (input) => {
 		while (input == "") {
 			console.log(`Sorry input can not be empty`);
@@ -218,7 +217,8 @@ window.onload = () => {
                             console.log("cart:" + count + ") " +i);
 
                         })
-                        
+
+                  document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
 
 					}
 				}
@@ -245,7 +245,7 @@ window.onload = () => {
 
 
               const showList = function(){ 
-                  //seeds.addEventListener('click', function (e) {                   console.log("click")
+                
                     console.log("show");
                     let status = cell.getElementsByTagName('p');
 
@@ -258,20 +258,14 @@ window.onload = () => {
                     //console.log("l:" +  l + "< count: " + counter) ;
                    // console.log("cart:" +  cart[l]+ " ? count: " + counter) ;
                  
-                      if(l > 0){
+                      if(l >= 0){
                        // console.log("cart:" +  cart + "count: " + counter) ;
                         getList[l] = document.getElementById("list");
                         console.log(l);
-                        
-                        cart.forEach((item )=>{
-                            getList[l].innerHTML += '<p>'+ item.name +'</p><hr/>';
-                        })
-    
-                          //console.log( getList[l])
-                          //console.log(cart[l].name)
-                       } 
+                        getList[l].innerHTML += '<p>'+ cart[l].name +'</p><hr/>';
                       
-                
+                       } 
+      
                    }
                    
                    
@@ -281,15 +275,17 @@ window.onload = () => {
                    console.log("hide")
                    alert("Emptying out the cart.")
                    cart = [];
-                   cart = new Array();
+                 
+                cart = new Array();
                   console.log(cart);
                   show = '';
-                  document.getElementById("list").innerHTML = "";
+                
+                   for(let i = 0; i < getList.length; i++){
+                     document.getElementById("list").innerHTML = "";
+                     document.getElementById('notification').innerHTML = "";
 
-                  
-                //    for(let i = 0; i < getList.length; i++){
 
-                //    }
+                   }
                   
 
 
@@ -373,7 +369,8 @@ window.onload = () => {
 		query = mainInput.value;
 		query1 = mainInput1.value;
 
-		validate(query, query1);
+        validate(query, query1);
+
 		return false;
 
 
