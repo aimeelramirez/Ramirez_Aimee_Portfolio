@@ -2,6 +2,9 @@ window.onload = () => {
 	//console.log("es6");
 	// console.log(data.json.datasets);
 	//get data
+	let showGreeting = document.getElementById("greeting");
+	//prompt new greeting on selection
+	showGreeting.innerHTML = '<p>Please Enter First Name and Last Name:</p><hr/>';
 	var resultsDIV = document.getElementById("results"),
 		mainInput = document.forms[0].main,
 		mainInput1 = document.forms[0].main1;
@@ -125,14 +128,14 @@ window.onload = () => {
 				data: getFullNames.firstName[key]
 			});
 
-        }
-        //get the list of players to be seen upon selecting
-		console.log(newPlayer)
+		}
+		//get the list of players to be seen upon selecting
+		console.log("players list: ", newPlayer);
 
 		const cells = document.getElementsByClassName('test');
 
-        let showGreeting = document.getElementById("greeting");
-        //prompt new greeting on selection
+		// showGreeting = document.getElementById("greeting");
+		//prompt new greeting on selection
 		showGreeting.innerHTML = '<p>Please select your player:</p><hr/>';
 
 		let greeting = document.getElementsByClassName('greeting');
@@ -141,30 +144,114 @@ window.onload = () => {
 		for (let cell of cells) {
 
 			cell.onclick = function() {
-            console.log("selected player", cell.textContent);
-            selPlayer = cell.textContent;
+				console.log("selected player", cell.textContent);
+				selPlayer = cell.textContent;
 
-			alert(`Current Player Selected: ${selPlayer}`);
-			showGreeting.innerHTML = '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
-				                     '<button class="delete"id="delete">Exit Application</button><hr/>';
+				alert(`Current Player Selected: ${selPlayer}`);
+				showGreeting.innerHTML = '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
+					'<button class="delete"id="delete">Exit Application</button><hr/>';
+				const storage = [];
+				for (let key in data.json.datasets) {
+					storage.push({
+						name: key,
+						data: data.json.datasets[key]
+					});
 
+				}
+				// debugger
+
+				/* another way to map and see the data */
+				// const showNames = storage.map(nameElement => {  
+				//      return '<div key=' + `${nameElement}` + '><p>'+`${nameElement.name}` +'</p>'
+				//      +'<br/> <img src="'+  nameElement.data.image +'"/></br></br> See more Details:'+ nameElement.data.download_link+'</p>'
+				//  +'</div>'}
+				//  )
+
+				var item = [];
+				//console.log("this is data:", storage)
+				showGreeting.innerHTML = '<p>Select the Plant Name for More Infomation:</p><hr/>';
+
+				for (let m = 0; m < storage.length; m++) {
+
+					//getting readable data
+					//document.getElementById("data").innerHTML += showNames;
+
+					var items = []
+					//show the data
+					items = document.getElementById("data");
+					items.className = "data-click";
+					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+
+				}
+				//s for select
+				const cells = document.getElementsByClassName('item');
+				//item[s] = document.getElementById("item");
+				//console.log(cells.length)
+				for (let cell of cells) {
+					//console.log(cell)
+					cell.onclick = function() {
+						let status = cell.getElementsByTagName('p');
+						console.log(status.name.innerText);
+						alert(status.name.innerText);
+
+					}
+				}
 
 			}
-		}
 
-		//const picked = document.getElementsByClassName('picked');
-		for (let item of greeting) {
+			//const picked = document.getElementsByClassName('picked');
+			for (let item of greeting) {
+				item.onclick = function() {
+					alert("Exiting application.");
+					//  item.parentNode.removeChild(item);
+					location.reload();
+					return false;
+
+
+				}
+			}
+
+		};
+
+		var iconWater = document.getElementsByClassName('water');
+		for (let item of iconWater) {
 			item.onclick = function() {
-				alert("Exiting application.");
+				alert("Watering the plants");
 				//  item.parentNode.removeChild(item);
-				location.reload();
+
 				return false;
 
 
 			}
-
 		}
-	};
+
+		var iconTend = document.getElementsByClassName('tend');
+		for (let item of iconTend) {
+			item.onclick = function() {
+				alert("Tending the plants");
+				//  item.parentNode.removeChild(item);
+
+				return false;
+
+
+			}
+		}
+		var iconHarvest = document.getElementsByClassName('harvest');
+		for (let item of iconHarvest) {
+			item.onclick = function() {
+				alert("Time to harvest the plants");
+				//  item.parentNode.removeChild(item);
+
+				return false;
+
+
+			}
+		}
+
+
+	}
+
 	var submitted = document.getElementById('submit');
 
 	submitted.onclick = function() {
@@ -175,53 +262,5 @@ window.onload = () => {
 		return false;
 
 
-	}
-
-
-
-	const storage = [];
-	for (let key in data.json.datasets) {
-		storage.push({
-			name: key,
-			data: data.json.datasets[key]
-		});
-
-	}
-	// debugger
-    console.log("this is data:", storage)
-
-    /* another way to map and see the data */
-	// const showNames = storage.map(nameElement => {  
-	//      return '<div key=' + `${nameElement}` + '><p>'+`${nameElement.name}` +'</p>'
-	//      +'<br/> <img src="'+  nameElement.data.image +'"/></br></br> See more Details:'+ nameElement.data.download_link+'</p>'
-	//  +'</div>'}
-    //  )
-    
-	var item = [];
-	for (let m = 0; m < storage.length; m++) {
-
-		//getting readable data
-        //document.getElementById("data").innerHTML += showNames;
-        
-		var items = []
-		//show the data
-		items = document.getElementById("data");
-		items.className = "data-click";
-		items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-			'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-
-	}
-	//s for select
-	const cells = document.getElementsByClassName('item');
-	//item[s] = document.getElementById("item");
-	//console.log(cells.length)
-	for (let cell of cells) {
-		//console.log(cell)
-		cell.onclick = function() {
-			let status = cell.getElementsByTagName('p');
-			console.log(status.name.innerText);
-			alert(status.name.innerText);
-
-		}
 	}
 }
