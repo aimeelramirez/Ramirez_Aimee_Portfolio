@@ -41,12 +41,17 @@ window.onload = () => {
 	let count = 0;
 	class Player {
 		constructor(firstName, lastName) {
+           // super(getFullNames);
 			this._firstName = firstName;
 			//  this.state = {
 			// 	 lastName: prompt("enter a last name")
-			//  }
-			this._getFullNames = getFullNames;
-			this._lastName = lastName;
+            //  }
+      
+            this._getFullNames = getFullNames;
+            // getFullNames = {
+            //    fullName: `${firstName}, ${lastName}`
+            // };
+            this._lastName = lastName;
 
 		}
 		//return first name
@@ -63,7 +68,7 @@ window.onload = () => {
 		}
 		static fullNamesMethod(firstName, lastName) {
 			getFullNames.firstName.push(firstName);
-			getFullNames.lastName.push(lastName);
+            getFullNames.lastName.push(lastName);
 			return firstName + lastName;
 		}
 
@@ -224,11 +229,7 @@ window.onload = () => {
 				}
 
             }
-            // Array.prototype.remove = function(from, to) {
-            //     var rest = this.slice((to || from) + 1 || this.length);
-            //     this.length = from < 0 ? this.length + from : from;
-            //     return this.push.apply(this, rest);
-            //   };
+   
 
           const getCart = document.getElementsByClassName('cart');
             //const getCartImg = document.getElementsByTagName('img');
@@ -251,37 +252,36 @@ window.onload = () => {
 
                    show =  document.getElementById("list").style.visibility = "visible";
                    // console.log("seeds in cart:", seeds);
+                   console.log("You have this amount of items in your cart:" + cart.length);                     
 
                    for(let l = 0; l <= cart.length; l++){
                     counter = c += 1;
                     index =  find += 1;
-                    //console.log("l:" +  l + "< count: " + counter) ;
-                   // console.log("cart:" +  cart[l]+ " ? count: " + counter) ;
-                 
-                      if(l >= 0){
+                      if(l >= 0 && l  < cart.length){
                        // console.log("cart:" +  cart + "count: " + counter) ;
                         getList[l] = document.getElementById("list");
-                        console.log(l);
                         getList[l].innerHTML += '<p>'+ cart[l].name +'</p><hr/>';
-                      
-                       } 
+                      }
       
                    }
-                   
-                   
-                //})
+
+            }
+            function emptyCart(from, to){
+                var rest = cart.slice((to || from) + 1 || cart.length);
+                cart.length = from < 0 ? cart.length + from : from;
+                return cart.push.apply(cart, rest);
             }
                const deleteList =() => { 
+                  alert("Emptying out the cart.")
                    console.log("hide")
-                   alert("Emptying out the cart.")
-                   cart = [];
-                 
-                cart = new Array();
-                  console.log(cart);
-                  show = '';
-                
+                   emptyCart(0, cart.length);
+                   console.log("You have no more items in the cart:", cart.length)
+
+                  // cart = [];
+
                    for(let i = 0; i < getList.length; i++){
-                     document.getElementById("list").innerHTML = "";
+                    document.getElementById("list").innerHTML = "";
+
                      document.getElementById('notification').innerHTML = "";
 
 
