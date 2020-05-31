@@ -2,8 +2,7 @@ const data = {
     "json": {
     "datasets": {
      "Alfalfa root crowns": {
-
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "264",
       "groundtruth": "yes",
@@ -13,8 +12,8 @@ const data = {
       "download_link": "https://zenodo.org/record/2172832#.Xk1IkRNKg1J",
       "home_link": "https://zenodo.org/record/2172832#.Xk1IkRNKg1J"
      },
-     "Root crown images of soybean and wheat": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+     "Root crown images of soybean": {
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "4400",
       "groundtruth": "no",
@@ -25,7 +24,7 @@ const data = {
       "home_link": "https://zenodo.org/record/3598638#.Xk1KCxNKg1J"
      },
      "Wheat root system dataset": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "2614",
       "groundtruth": "yes",
@@ -36,7 +35,7 @@ const data = {
       "home_link": "http://gigadb.org/dataset/100346"
      },
      "Maize lateral root dataset": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
 
       "organ": "root-system",
       "numimages": "79",
@@ -47,8 +46,8 @@ const data = {
       "download_link": "https://figshare.com/articles/Lateral_roots_dataset/4836890/5",
       "home_link": "https://figshare.com/articles/Lateral_roots_dataset/4836890/5"
      },
-     "3D Magnetic resonance images of barley roots": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+     "Barley roots": {
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "56",
       "groundtruth": "no",
@@ -59,7 +58,7 @@ const data = {
       "home_link": "https://doi.ipk-gatersleben.de/DOI/e294d5d6-5408-4f6b-926b-9f12922cc3d3/f265da87-df02-4602-aeb4-7c3f5198d2af/2"
      },
      "Simulated root images": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "10000",
       "groundtruth": "yes",
@@ -70,7 +69,7 @@ const data = {
       "home_link": "https://zenodo.org/record/61739"
      },
      "Root phenotyping data": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "98",
       "groundtruth": "yes",
@@ -81,7 +80,7 @@ const data = {
       "home_link": "0000"
      },
      "Maize Root Wisconsin Diversity Panel": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "85",
       "groundtruth": "no",
@@ -92,7 +91,7 @@ const data = {
       "home_link": "0000"
      },
      "Root Cowpea Diversity panel": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "1500",
       "groundtruth": "no",
@@ -103,7 +102,7 @@ const data = {
       "home_link": "0000"
      },
      "Rice in Gellan gum": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "2206",
       "groundtruth": "no",
@@ -114,7 +113,7 @@ const data = {
       "home_link": "0000"
      },
      "Wheat root diversity panel": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "3190",
       "groundtruth": "no",
@@ -125,7 +124,7 @@ const data = {
       "home_link": "0000"
      },
      "Rice root Gellan dataset": {
-      "image":"https://i7.uihere.com/icons/518/201/104/allergens-beans-lupin-lupin-seed-nature-seed-icon-360acc27a4b3b5ad3220c2a4e70bcb4a.png",
+      "image":"https://i.imgur.com/aEdXEb1.png?1",
       "organ": "root-system",
       "numimages": "57000",
       "groundtruth": "no",
