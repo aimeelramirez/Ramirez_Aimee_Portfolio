@@ -41,3 +41,6 @@ Wordpress Site:
 | ----------- | ----------- |
 | Ramirez_Aimee_json | [jsdemo](./jsonDEMO)|
 
+### Attempt upon dictionary
+
+<https://github.com/alramirez1/Ramirez_Aimee_Portfolio/tree/dictonary>
