@@ -185,14 +185,38 @@ window.onload = () => {
 					var items = []
 					//show the data
                     items = document.getElementById("data");
-                    
-                    //items.className = "data-click";
-                   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
+					// itemRow1 = document.getElementById("data-1");
+					// itemRow2 = document.getElementById("data-2");
+					// itemRow3 = document.getElementById("data-3");
+					// itemRow4 = document.getElementById("data-4");
 
+                    //items.className = "data-click";
+				   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
+				 if(m >= 0 && m < storage.length){
 					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
 						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-
+				   }
+				//    if(m >= 0 && m < 3){
+				// 	itemRow1.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+				//    }
+				//    else if(m >= 0 && m < 6){
+				// 	itemRow2.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+				//    }
+				//    else if(m >= 0 && m < 9){
+				// 	itemRow3.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+				//    }
+				//    else if(m >= 0 && m < 12){
+				// 	itemRow4.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+				//    }
 				}
+
+				// let's show the method buttons
+				document.getElementById("navigation").innerHTML +=  '<table> <tr><th class="water" id="water">Water</th>'+'<th class="tend" id="tend">Tend</th>'+'<th class="harvest" id="harvest">Harvest</th></tr></table>';
+		
 				//s for select
 				const cells = document.getElementsByClassName('item');
 				//item[s] = document.getElementById("item");
@@ -205,7 +229,9 @@ window.onload = () => {
               
 
 						let status = cell.getElementsByTagName('p');
-                        console.log(status.name.innerText);
+						console.log(status.name.innerText);
+						alert(status.name.innerText);
+
                          let plantName = [];
                          plantName.push(status.name.innerText);
                          for (let key in plantName) {
@@ -216,15 +242,9 @@ window.onload = () => {
         
                         }
                         
-                        alert(status.name.innerText);
-                        cart.forEach((i,count) =>{
-                            count = e += 1;
-                            console.log("cart:" + count + ") " +i);
-
-                        })
-
+                   
                   document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
-
+				   
 					}
 				}
 
@@ -233,32 +253,35 @@ window.onload = () => {
 
           const getCart = document.getElementsByClassName('cart');
             //const getCartImg = document.getElementsByTagName('img');
-          let showImg =  document.getElementById("cart").style.visibility = "visible";
+          //let showImg =  document.getElementById("cart").style.visibility = "visible";
           let show =  document.getElementById("list").style.visibility = "hidden";
           const  getList = [];
      
             for (let seeds of getCart) {
                 //console.log(cell)
                 let  c = -1;  
-                let  index = 0;  
+                
                 let  find = 0; 
                 let counter = 0; 
-
+                let index;
 
               const showList = function(){ 
                 
                     console.log("show");
-                    let status = cell.getElementsByTagName('p');
-
+                    let status = seeds.getElementsByTagName('p');
+                    console.log(status)
                    show =  document.getElementById("list").style.visibility = "visible";
                    // console.log("seeds in cart:", seeds);
                    console.log("You have this amount of items in your cart:" + cart.length);                     
-
+                    alert(cart);
                    for(let l = 0; l <= cart.length; l++){
                     counter = c += 1;
-                    index =  find += 1;
+                    index =  l;
+                    index += 1;
+
                       if(l >= 0 && l  < cart.length){
-                       // console.log("cart:" +  cart + "count: " + counter) ;
+                        
+                        console.log( index + ") item: " +  cart[l].name) ;
                         getList[l] = document.getElementById("list");
                         getList[l].innerHTML += '<p>'+ cart[l].name +'</p><hr/>';
                       }
@@ -272,17 +295,20 @@ window.onload = () => {
                 return cart.push.apply(cart, rest);
             }
                const deleteList =() => { 
-                  alert("Emptying out the cart.")
-                   console.log("hide")
+             
+                   //empty cart or   cart = [];
                    emptyCart(0, cart.length);
+                   //reset counter 
+                   e = 0;
                    console.log("You have no more items in the cart:", cart.length)
 
-                  // cart = [];
+              
 
                    for(let i = 0; i < getList.length; i++){
                     document.getElementById("list").innerHTML = "";
 
                      document.getElementById('notification').innerHTML = "";
+                     show =  document.getElementById("list").style.visibility = "hidden";
 
 
                    }
@@ -290,23 +316,23 @@ window.onload = () => {
 
 
                 //    seeds.addEventListener('click', function (e) {
-                   showImg =  document.getElementById("cart").style.visibility = "visible";
-                   show =  document.getElementById("list").style.visibility = "hidden";
+                   //showImg =  document.getElementById("cart").style.visibility = "visible";
                     // document.getElementById("list").style.display = "none";
 
                 //   });
                 return cart;
                 }
+              
             // Toggle element visibility
             seeds.addEventListener('click', function (e) {
-                   if(show == "hidden"){
+                   if(show == "hidden" && cart.length != 0){
                        showList();
                       
-                   }else{
+                   }else {
                 
                    deleteList();
-
                    }
+                  
               });
 
         }

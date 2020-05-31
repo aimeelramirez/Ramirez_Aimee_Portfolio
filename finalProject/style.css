@@ -1,14 +1,42 @@
-body{
-    z-index: 0;
-}
+
 img{
     width:100px;
     height:100px;
 }
-#name{
-    border:1px solid black;
+table{
+    column-span: 2px;
 }
-#name:hover{
+th{
+    /* column-count: 3; */
+   padding: 50px;
+   /* border: 1px solid red; */
+
+    /* column-width: 40px; */
+
+
+    /* width:50%; */
+}
+/* [class*="data"]{ */
+#data {
+ display: flex;
+ flex-wrap: wrap;
+
+
+    /* background-color: grey; */
+    /* float: left; */
+    /* padding: .5%; */
+    /* width:10%; */
+}
+
+#data > div {
+
+        background-color: #f1f1f1;
+        width: 25%;
+        margin: 10px;
+        text-align: center;
+
+      }
+.item:hover{
     border:1px solid green;
 }
 .test{
