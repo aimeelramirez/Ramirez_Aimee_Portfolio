@@ -391,7 +391,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 						   document.getElementById("growing").innerHTML += '<li>'+ index +") "+ purchasedCart[seed]+'</li><hr/>';
 						   console.log("You are currently growing: ", purchasedCart[seed]);
 						   document.getElementById('purchase').innerHTML = '';
-						   document.getElementById("list").innerHTML = "";
+						//    document.getElementById("list").innerHTML = "";
 						   document.getElementById('notification').innerHTML = "";
 						   document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
 						   items = document.getElementById("data").style.visibility = "hidden";
@@ -520,7 +520,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 					document.getElementById("navigation").innerHTML = "";
 					document.getElementById("growing-title").innerHTML ="";
 					document.getElementById("growing").innerHTML = "";
-                    //  document.getElementById('notification').innerHTML = "";
+                    document.getElementById('notification').innerHTML = "";
                      show =  document.getElementById("list").style.visibility = "hidden";
 
 
