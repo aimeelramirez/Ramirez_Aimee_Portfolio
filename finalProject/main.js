@@ -141,22 +141,24 @@ window.onload = () => {
 		};
 
 		let playersList =[];
-
+		//for one player for now
+		document.getElementById("test").innerHTML = "";
 		count += 1;
 		for(let q = 0; q < count; q++){
+
 	    playersList[q] = document.getElementById("test");
 		if (query == "") {
 			let getFirstName = validateStringName(query);
 			//this is to get the name if valid
-			playersList[q].innerHTML += '<p class="test"> ' + FullNames.fullNamesMethod(getFirstName, query1) + '</p>';
+			playersList[q].innerHTML = '<p class="test"> ' + FullNames.fullNamesMethod(getFirstName, query1) + '</p>';
 
 		} else if (query1 == "") {
 			let getLastName = validateStringName(query1);
 			//this is to get the name if valid
-			playersList[q].innerHTML += '<p class="test">' + FullNames.fullNamesMethod(query, getLastName) + '</p>';
+			playersList[q].innerHTML = '<p class="test">' + FullNames.fullNamesMethod(query, getLastName) + '</p>';
 
 		} else if (query1 != "" && query != "") {
-			playersList[q].innerHTML += '<p class="test">' + FullNames.fullNamesMethod(query, query1) + '</p>';
+			playersList[q].innerHTML = '<p class="test">' + FullNames.fullNamesMethod(query, query1) + '</p>';
 			//console.log(getFullNames.firstName.length)
 
 			//checking first name is stored in constructor; 
@@ -188,19 +190,15 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 		//get the list of players to be seen upon selecting
 		console.log("players list: ", newPlayer);
 
-		const cells = document.getElementsByClassName('test');
+		const cells1 = document.getElementsByClassName('test');
 
 		// showGreeting = document.getElementById("greeting");
 		//prompt new greeting on selection
 		showGreeting.innerHTML = '<p>Please select your player:</p><hr/>';
-		//show cart 
-		document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
+	
 
 
-		console.log("cells:",cells)
-
-
-		for (let cell of cells) {
+		for (let cell of cells1) {
 
 			cell.onclick = function() {
 				console.log("selected player", cell.textContent);
@@ -209,13 +207,13 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 					FirstName: selPlayer,
 					cart:[]
 				  };
-				  for (let key in cell) {
-					pushPlayers.push({
-						name: key,
-						data: selPlayer[key]
-					})
-				}
-			   console.log(pushPlayers);
+			// 	  for (let key in cell) {
+			// 		pushPlayers.push({
+			// 			name: key,
+			// 			data: selPlayer[key]
+			// 		})
+			// 	}
+			// //    console.log(pushPlayers);
 			   
 				alert(`Current Player Selected: ${dict.FirstName}`);
 				showGreeting.innerHTML = '  <h3>Current player:</h3><div class="picked"> Welcome ' + dict.FirstName + '!</div> <hr/>';
@@ -256,7 +254,10 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 				   }
 				}
 		
- 
+ 			//show cart 
+		   document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
+
+
 				//s for select
 				const cells = document.getElementsByClassName('item');
 				//item[s] = document.getElementById("item");
@@ -298,6 +299,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 
 			
 		
+	}
 
 	// // Empty Cart
 	// function emptyCart(from, to){
@@ -529,7 +531,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
               
             // Toggle element visibility
             seeds.addEventListener('click', function (e) {
-				debugger
+				//debugger
                    if(show == "hidden"){
 				   showList(); 
 
@@ -549,11 +551,10 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 
 
 
-	}
 	var submitted = document.getElementById('submit');
 
 	submitted.onclick = function() {
-		debugger
+		//debugger
 		query = mainInput.value;
 		query1 = mainInput1.value;
 		query2 = mainInput2.value;
