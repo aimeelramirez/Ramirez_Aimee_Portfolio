@@ -3,39 +3,33 @@ img{
     width:100px;
     height:100px;
 }
-table{
-    column-span: 2px;
+.navigation{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
 }
-th{
-    /* column-count: 3; */
-   padding: 50px;
-   /* border: 1px solid red; */
+.navigation > div{
+    background-color: #f1f1f1;
+    width: 25%;
+    margin: 10px;
+    text-align: center;
 
-    /* column-width: 40px; */
-
-
-    /* width:50%; */
 }
 /* [class*="data"]{ */
 #data {
  display: flex;
  flex-wrap: wrap;
-
-
-    /* background-color: grey; */
-    /* float: left; */
-    /* padding: .5%; */
-    /* width:10%; */
+ justify-content: center;
 }
 
 #data > div {
 
-        background-color: #f1f1f1;
-        width: 25%;
-        margin: 10px;
-        text-align: center;
+background-color: #f1f1f1;
+width: 25%;
+margin: 10px;
+text-align: center;
 
-      }
+}
 .item:hover{
     border:1px solid green;
 }

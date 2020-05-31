@@ -155,7 +155,7 @@ window.onload = () => {
 				selPlayer = cell.textContent;
 
 				alert(`Current Player Selected: ${selPlayer}`);
-				showGreeting.innerHTML = '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
+				showGreeting.innerHTML += '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
 					'<button class="delete"id="delete">Exit Application</button><hr/>';
 
 				for (let key in data.json.datasets) {
@@ -185,38 +185,40 @@ window.onload = () => {
 					var items = []
 					//show the data
                     items = document.getElementById("data");
-					// itemRow1 = document.getElementById("data-1");
-					// itemRow2 = document.getElementById("data-2");
-					// itemRow3 = document.getElementById("data-3");
-					// itemRow4 = document.getElementById("data-4");
-
-                    //items.className = "data-click";
 				   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
 				 if(m >= 0 && m < storage.length){
 					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
 						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
 				   }
-				//    if(m >= 0 && m < 3){
-				// 	itemRow1.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-				//    }
-				//    else if(m >= 0 && m < 6){
-				// 	itemRow2.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-				//    }
-				//    else if(m >= 0 && m < 9){
-				// 	itemRow3.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-				//    }
-				//    else if(m >= 0 && m < 12){
-				// 	itemRow4.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-				// 		'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-				//    }
 				}
 
-				// let's show the method buttons
-				document.getElementById("navigation").innerHTML +=  '<table> <tr><th class="water" id="water">Water</th>'+'<th class="tend" id="tend">Tend</th>'+'<th class="harvest" id="harvest">Harvest</th></tr></table>';
-		
+	// let's show the method buttons
+	document.getElementById("navigation").innerHTML +=  '<div class="water" id="water">Water</div>'+'<div  class="tend" id="tend">Tend</div>'+'<div class="harvest" id="harvest">Harvest</div>';
+		const iconWater = document.getElementById('water');
+		iconWater.addEventListener("click", function(){
+				alert("Watering the plants");
+				//  item.parentNode.removeChild(item);
+
+				///return false;
+
+		})
+
+		const iconTend = document.getElementById('tend');
+		iconTend.addEventListener("click", function(){
+				alert("Tending the plants");
+				//  item.parentNode.removeChild(item);
+
+				//return false;
+		})
+		const iconHarvest =  document.getElementById('harvest');
+		iconHarvest.addEventListener("click", function(){
+				alert("Time to harvest the plants");
+				//  item.parentNode.removeChild(item);
+
+				//return false;
+
+
+		})
 				//s for select
 				const cells = document.getElementsByClassName('item');
 				//item[s] = document.getElementById("item");
@@ -244,12 +246,37 @@ window.onload = () => {
                         
                    
                   document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
-				   
+				  document.getElementById('emptyCart').innerHTML = '<div class="emptyCart"> Empty Cart </div>';
+
 					}
 				}
 
-            }
-   
+			}
+
+	// Empty Cart
+	function emptyCart(from, to){
+                var rest = cart.slice((to || from) + 1 || cart.length);
+                cart.length = from < 0 ? cart.length + from : from;
+                return cart.push.apply(cart, rest);
+    }
+	const emptyCartButton = document.getElementById('emptyCart');
+        emptyCartButton.addEventListener("click", function(){
+			if(cart.length > 0){
+				alert('Emptying cart');
+                //empty cart or   cart = [];
+				 emptyCart(0, cart.length);
+				 //reset e
+				 e = 0;
+				 for(let i = 0; i < getList.length; i++){
+                    document.getElementById("list").innerHTML = "";
+                     document.getElementById('notification').innerHTML = "";
+                     show =  document.getElementById("list").style.visibility = "hidden";
+				   }
+				}else{
+					alert('Your cart is empty.');
+				}
+			  })
+	// Get Cart	  
 
           const getCart = document.getElementsByClassName('cart');
             //const getCartImg = document.getElementsByTagName('img');
@@ -264,50 +291,37 @@ window.onload = () => {
                 let  find = 0; 
                 let counter = 0; 
                 let index;
-
+// Show Cart
               const showList = function(){ 
                 
                     console.log("show");
                     let status = seeds.getElementsByTagName('p');
-                    console.log(status)
+                   // console.log(status)
                    show =  document.getElementById("list").style.visibility = "visible";
                    // console.log("seeds in cart:", seeds);
                    console.log("You have this amount of items in your cart:" + cart.length);                     
-                    alert(cart);
                    for(let l = 0; l <= cart.length; l++){
                     counter = c += 1;
                     index =  l;
-                    index += 1;
-
+					index += 1;
+					
                       if(l >= 0 && l  < cart.length){
-                        
                         console.log( index + ") item: " +  cart[l].name) ;
                         getList[l] = document.getElementById("list");
-                        getList[l].innerHTML += '<p>'+ cart[l].name +'</p><hr/>';
+                        getList[l].innerHTML +='<p>' + index +  ') '+ cart[l].name +'</p><hr/>';
                       }
       
                    }
 
             }
-            function emptyCart(from, to){
-                var rest = cart.slice((to || from) + 1 || cart.length);
-                cart.length = from < 0 ? cart.length + from : from;
-                return cart.push.apply(cart, rest);
-            }
-               const deleteList =() => { 
+        // Hide Cart
+               const hideList =() => { 
              
-                   //empty cart or   cart = [];
-                   emptyCart(0, cart.length);
                    //reset counter 
                    e = 0;
-                   console.log("You have no more items in the cart:", cart.length)
-
-              
-
                    for(let i = 0; i < getList.length; i++){
                     document.getElementById("list").innerHTML = "";
-
-                     document.getElementById('notification').innerHTML = "";
+                    //  document.getElementById('notification').innerHTML = "";
                      show =  document.getElementById("list").style.visibility = "hidden";
 
 
@@ -326,13 +340,12 @@ window.onload = () => {
             // Toggle element visibility
             seeds.addEventListener('click', function (e) {
                    if(show == "hidden" && cart.length != 0){
-                       showList();
-                      
-                   }else {
-                
-                   deleteList();
-                   }
-                  
+                   showList(); 
+                   }else if(cart.length == 0){
+				   alert("Your cart is empty");
+				   }else {
+                   hideList();
+                   }    
               });
 
         }
@@ -351,40 +364,6 @@ window.onload = () => {
 
 		};
 
-		var iconWater = document.getElementsByClassName('water');
-		for (let item of iconWater) {
-			item.onclick = function() {
-				alert("Watering the plants");
-				//  item.parentNode.removeChild(item);
-
-				return false;
-
-
-			}
-		}
-
-		var iconTend = document.getElementsByClassName('tend');
-		for (let item of iconTend) {
-			item.onclick = function() {
-				alert("Tending the plants");
-				//  item.parentNode.removeChild(item);
-
-				return false;
-
-
-			}
-		}
-		var iconHarvest = document.getElementsByClassName('harvest');
-		for (let item of iconHarvest) {
-			item.onclick = function() {
-				alert("Time to harvest the plants");
-				//  item.parentNode.removeChild(item);
-
-				return false;
-
-
-			}
-		}
 
 
 	}
