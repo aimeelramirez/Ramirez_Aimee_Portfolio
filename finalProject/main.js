@@ -144,6 +144,8 @@ window.onload = () => {
 		// showGreeting = document.getElementById("greeting");
 		//prompt new greeting on selection
 		showGreeting.innerHTML = '<p>Please select your player:</p><hr/>';
+		//show cart 
+		document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
 
 		let greeting = document.getElementsByClassName('greeting');
 
@@ -197,6 +199,8 @@ window.onload = () => {
 		const iconWater = document.getElementById('water');
 		iconWater.addEventListener("click", function(){
 				alert("Watering the plants");
+				// document.getElementById("showAction").innerHTML = '<img src="https://i.imgur.com/YjTkID5.png?1"/>';
+
 				//  item.parentNode.removeChild(item);
 
 				///return false;
@@ -206,6 +210,8 @@ window.onload = () => {
 		const iconTend = document.getElementById('tend');
 		iconTend.addEventListener("click", function(){
 				alert("Tending the plants");
+				// document.getElementById("showAction").innerHTML = '<img src="https://i.imgur.com/YjTkID5.png?1"/>';
+
 				//  item.parentNode.removeChild(item);
 
 				//return false;
@@ -245,7 +251,8 @@ window.onload = () => {
                         }
                         
                    
-                  document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
+				  document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
+				  document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/2ZdgXqH.png?1"/>';
 				  document.getElementById('emptyCart').innerHTML = '<div class="emptyCart"> Empty Cart </div>';
 
 					}
@@ -270,7 +277,9 @@ window.onload = () => {
 				 for(let i = 0; i < getList.length; i++){
                     document.getElementById("list").innerHTML = "";
                      document.getElementById('notification').innerHTML = "";
-                     show =  document.getElementById("list").style.visibility = "hidden";
+					 show =  document.getElementById("list").style.visibility = "hidden";
+					 document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
+
 				   }
 				}else{
 					alert('Your cart is empty.');
@@ -327,13 +336,6 @@ window.onload = () => {
 
                    }
                   
-
-
-                //    seeds.addEventListener('click', function (e) {
-                   //showImg =  document.getElementById("cart").style.visibility = "visible";
-                    // document.getElementById("list").style.display = "none";
-
-                //   });
                 return cart;
                 }
               
