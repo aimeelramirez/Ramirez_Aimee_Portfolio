@@ -3,6 +3,16 @@ img{
     width:100px;
     height:100px;
 }
+.test{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+
+    justify-content: center;
+
+
+}
+
 .navigation{
  display: flex;
  flex-wrap: wrap;
@@ -47,4 +57,24 @@ text-align: center;
      border:1px solid red;
      color: black;
      font-size: 18px;
-    }
+}
+#game{
+    background-color: #59fc19;
+
+}
+#water{
+    background-color: #2a9cfa;
+
+}
+#tend{
+    background-color: #ecdf29;
+
+}
+#harvest{
+    background-color:lawngreen;
+}
+#congrats{
+    border:1px solid green;
+    color:green;
+
+}

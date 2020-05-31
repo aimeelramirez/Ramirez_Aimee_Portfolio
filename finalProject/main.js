@@ -4,11 +4,11 @@ window.onload = () => {
 	//get data
 	let showGreeting = document.getElementById("greeting");
 	//prompt new greeting on selection
-	showGreeting.innerHTML = '<p>Please Enter First Name and Last Name:</p><hr/>';
+	showGreeting.innerHTML = '<h3>Please Enter First Name and Last Name:</h3><hr/>';
 	var resultsDIV = document.getElementById("results"),
 		mainInput = document.forms[0].main,
 		mainInput1 = document.forms[0].main1;
-       
+
 	var input;
 	var query = mainInput.value;
 	var query1 = mainInput1.value;
@@ -41,17 +41,17 @@ window.onload = () => {
 	let count = 0;
 	class Player {
 		constructor(firstName, lastName) {
-           // super(getFullNames);
+			// super(getFullNames);
 			this._firstName = firstName;
 			//  this.state = {
 			// 	 lastName: prompt("enter a last name")
-            //  }
-      
-            this._getFullNames = getFullNames;
-            // getFullNames = {
-            //    fullName: `${firstName}, ${lastName}`
-            // };
-            this._lastName = lastName;
+			//  }
+
+			this._getFullNames = getFullNames;
+			// getFullNames = {
+			//    fullName: `${firstName}, ${lastName}`
+			// };
+			this._lastName = lastName;
 
 		}
 		//return first name
@@ -68,7 +68,7 @@ window.onload = () => {
 		}
 		static fullNamesMethod(firstName, lastName) {
 			getFullNames.firstName.push(firstName);
-            getFullNames.lastName.push(lastName);
+			getFullNames.lastName.push(lastName);
 			return firstName + lastName;
 		}
 
@@ -122,12 +122,19 @@ window.onload = () => {
 
 			//checking first name is stored in constructor; 
 		}
+		// Exit
+		let exit = document.getElementById('exit');
 
+		exit.addEventListener('click', function() {
+			alert("Exiting application.");
+			location.reload();
+			return false;
+		})
 		//console.log(playersList)
-
-        let newPlayer = new Array();
-        let cart = new Array();
-        const storage = [];
+		document.getElementById("exit").innerHTML = '<button class="exit"id="exit">Exit Application</button><hr/>';
+		let newPlayer = new Array();
+		let cart = new Array();
+		const storage = [];
 
 		for (let key in getFullNames.firstName) {
 			newPlayer.push({
@@ -147,7 +154,7 @@ window.onload = () => {
 		//show cart 
 		document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
 
-		let greeting = document.getElementsByClassName('greeting');
+
 
 
 		for (let cell of cells) {
@@ -157,8 +164,7 @@ window.onload = () => {
 				selPlayer = cell.textContent;
 
 				alert(`Current Player Selected: ${selPlayer}`);
-				showGreeting.innerHTML += '<div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>' +
-					'<button class="delete"id="delete">Exit Application</button><hr/>';
+				showGreeting.innerHTML = '  <h3>Current player:</h3><div class="picked"> Welcome ' + cell.textContent + '!</div> <hr/>';
 
 				for (let key in data.json.datasets) {
 					storage.push({
@@ -167,6 +173,8 @@ window.onload = () => {
 					});
 
 				}
+
+
 				// debugger
 
 				/* another way to map and see the data */
@@ -178,7 +186,7 @@ window.onload = () => {
 
 				var item = [];
 				//console.log("this is data:", storage)
-           
+
 				for (let m = 0; m < storage.length; m++) {
 
 					//getting readable data
@@ -186,183 +194,282 @@ window.onload = () => {
 
 					var items = []
 					//show the data
-                    items = document.getElementById("data");
-				   document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
-				 if(m >= 0 && m < storage.length){
-					items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
-						'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
-				   }
+					items = document.getElementById("data");
+					document.getElementById("prompt").innerHTML = '<p>Select the Plant Name to add to cart and Click it again to delete:</p><hr/>';
+					if (m >= 0 && m < storage.length) {
+						items.innerHTML += '<div class="item"><p id="name">' + storage[m].name +
+							'</p><br/> <img src="' + storage[m].data.image + '"/></br> See more Details: <a href="' + storage[m].data.download_link + '">here</a></div>';
+					}
 				}
 
-	// let's show the method buttons
-	document.getElementById("navigation").innerHTML +=  '<div class="water" id="water">Water</div>'+'<div  class="tend" id="tend">Tend</div>'+'<div class="harvest" id="harvest">Harvest</div>';
-		const iconWater = document.getElementById('water');
-		iconWater.addEventListener("click", function(){
-				alert("Watering the plants");
-				// document.getElementById("showAction").innerHTML = '<img src="https://i.imgur.com/YjTkID5.png?1"/>';
 
-				//  item.parentNode.removeChild(item);
-
-				///return false;
-
-		})
-
-		const iconTend = document.getElementById('tend');
-		iconTend.addEventListener("click", function(){
-				alert("Tending the plants");
-				// document.getElementById("showAction").innerHTML = '<img src="https://i.imgur.com/YjTkID5.png?1"/>';
-
-				//  item.parentNode.removeChild(item);
-
-				//return false;
-		})
-		const iconHarvest =  document.getElementById('harvest');
-		iconHarvest.addEventListener("click", function(){
-				alert("Time to harvest the plants");
-				//  item.parentNode.removeChild(item);
-
-				//return false;
-
-
-		})
 				//s for select
 				const cells = document.getElementsByClassName('item');
 				//item[s] = document.getElementById("item");
 				//console.log(cells.length)
 				for (let cell of cells) {
-                    //console.log(cell)
-                    //e upon event
-                    let  e = 0;  
+					//console.log(cell)
+					//e upon event
+					let e = 0;
 					cell.onclick = function() {
-              
-
 						let status = cell.getElementsByTagName('p');
 						console.log(status.name.innerText);
 						alert(status.name.innerText);
 
-                         let plantName = [];
-                         plantName.push(status.name.innerText);
-                         for (let key in plantName) {
-                             cart.push({
-                               // id: parseInt(e) + 1,
-                                name: plantName[key]
-                            });
-        
-                        }
-                        
-                   
-				  document.getElementById('notification').innerHTML = '<div class="circle">'+ cart.length +'</div>';
-				  document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/2ZdgXqH.png?1"/>';
-				  document.getElementById('emptyCart').innerHTML = '<div class="emptyCart"> Empty Cart </div>';
+						let plantName = [];
+						plantName.push(status.name.innerText);
+						for (let key in plantName) {
+							cart.push({
+								// id: parseInt(e) + 1,
+								name: plantName[key]
+							});
+
+						}
+
+
+						document.getElementById('notification').innerHTML = '<div class="circle">' + cart.length + '</div>';
+						document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/2ZdgXqH.png?1"/>';
+						document.getElementById('emptyCart').innerHTML = '<div class="emptyCart"> Empty Cart </div>';
 
 					}
 				}
 
 			}
 
-	// Empty Cart
-	function emptyCart(from, to){
-                var rest = cart.slice((to || from) + 1 || cart.length);
-                cart.length = from < 0 ? cart.length + from : from;
-                return cart.push.apply(cart, rest);
-    }
-	const emptyCartButton = document.getElementById('emptyCart');
-        emptyCartButton.addEventListener("click", function(){
-			if(cart.length > 0){
-				alert('Emptying cart');
-                //empty cart or   cart = [];
-				 emptyCart(0, cart.length);
-				 //reset e
-				 e = 0;
-				 for(let i = 0; i < getList.length; i++){
-                    document.getElementById("list").innerHTML = "";
-                     document.getElementById('notification').innerHTML = "";
-					 show =  document.getElementById("list").style.visibility = "hidden";
-					 document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
-
-				   }
-				}else{
-					alert('Your cart is empty.');
-				}
-			  })
-	// Get Cart	  
-
-          const getCart = document.getElementsByClassName('cart');
-            //const getCartImg = document.getElementsByTagName('img');
-          //let showImg =  document.getElementById("cart").style.visibility = "visible";
-          let show =  document.getElementById("list").style.visibility = "hidden";
-          const  getList = [];
-     
-            for (let seeds of getCart) {
-                //console.log(cell)
-                let  c = -1;  
-                
-                let  find = 0; 
-                let counter = 0; 
-                let index;
-// Show Cart
-              const showList = function(){ 
-                
-                    console.log("show");
-                    let status = seeds.getElementsByTagName('p');
-                   // console.log(status)
-                   show =  document.getElementById("list").style.visibility = "visible";
-                   // console.log("seeds in cart:", seeds);
-                   console.log("You have this amount of items in your cart:" + cart.length);                     
-                   for(let l = 0; l <= cart.length; l++){
-                    counter = c += 1;
-                    index =  l;
-					index += 1;
-					
-                      if(l >= 0 && l  < cart.length){
-                        console.log( index + ") item: " +  cart[l].name) ;
-                        getList[l] = document.getElementById("list");
-                        getList[l].innerHTML +='<p>' + index +  ') '+ cart[l].name +'</p><hr/>';
-                      }
-      
-                   }
-
-            }
-        // Hide Cart
-               const hideList =() => { 
-             
-                   //reset counter 
-                   e = 0;
-                   for(let i = 0; i < getList.length; i++){
-                    document.getElementById("list").innerHTML = "";
-                    //  document.getElementById('notification').innerHTML = "";
-                     show =  document.getElementById("list").style.visibility = "hidden";
 
 
-                   }
-                  
-                return cart;
-                }
-              
-            // Toggle element visibility
-            seeds.addEventListener('click', function (e) {
-                   if(show == "hidden" && cart.length != 0){
-                   showList(); 
-                   }else if(cart.length == 0){
-				   alert("Your cart is empty");
-				   }else {
-                   hideList();
-                   }    
-              });
 
-        }
-   
-			//const picked = document.getElementsByClassName('picked');
-			for (let item of greeting) {
-				item.onclick = function() {
-					alert("Exiting application.");
-					//  item.parentNode.removeChild(item);
-					location.reload();
-					return false;
-
-
-				}
+			// Empty Cart
+			function emptyCart(from, to) {
+				var rest = cart.slice((to || from) + 1 || cart.length);
+				cart.length = from < 0 ? cart.length + from : from;
+				return cart.push.apply(cart, rest);
 			}
+			const emptyCartButton = document.getElementById('emptyCart');
+			emptyCartButton.addEventListener("click", function() {
+				if (cart.length > 0) {
+					alert('Emptying cart');
+					//empty cart or   cart = [];
+					emptyCart(0, cart.length);
+					//reset e
+					e = 0;
+					for (let i = 0; i < getList.length; i++) {
+						document.getElementById("list").innerHTML = "";
+						document.getElementById('notification').innerHTML = "";
+						document.getElementById("navigation").innerHTML = "";
+
+						show = document.getElementById("list").style.visibility = "hidden";
+						document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
+
+					}
+				}
+				// }else{
+				// 	alert('Your cart is empty.');
+				// }
+			})
+			// Get Cart	  
+
+			const getCart = document.getElementsByClassName('cart');
+			//const getCartImg = document.getElementsByTagName('img');
+			//let showImg =  document.getElementById("cart").style.visibility = "visible";
+			let show = document.getElementById("list").style.visibility = "hidden";
+			const getList = [];
+			const purchasedCart = [];
+			let l = 0;
+			for (let seeds of getCart) {
+				let c = -1;
+
+				let find = 0;
+				let counter = 0;
+				let index;
+				// Show Cart
+				const showList = function() {
+
+					console.log("show");
+					// console.log(status)
+					show = document.getElementById("list").style.visibility = "visible";
+					// console.log("seeds in cart:", seeds);
+					console.log("You have this amount of items in your cart:" + cart.length);
+					for (l = 0; l <= cart.length; l++) {
+						counter = c += 1;
+						index = l;
+						index += 1;
+						getList[l] = document.getElementById("list");
+
+						if (l >= 0 && l < cart.length) {
+							console.log(index + ") item: " + cart[l].name);
+							//alert(index)
+							getList[l].innerHTML += '<p>' + index + ') ' + cart[l].name + '</p><hr/>';
+							//status = getList[l].getElementsByTagName('p');
+
+						}
+					}
+
+					document.getElementById('purchase').innerHTML = '<button id="purchased">puchase</button>';
+					let purchaseItems = document.getElementById('purchased');
+
+					purchaseItems.addEventListener("click", function() {
+
+						for (let seed = 0; seed < cart.length; seed++) {
+							purchasedCart.push(cart[seed].name);
+
+							let index = seed + 1;
+							document.getElementById("growing-title").innerHTML = 'You are currently growing:';
+							document.getElementById("growing").innerHTML += '<li>' + index + ") " + purchasedCart[seed] + '</li><hr/>';
+							console.log("You are currently growing: ", purchasedCart[seed]);
+							document.getElementById('purchase').innerHTML = '';
+							document.getElementById("list").innerHTML = "";
+							document.getElementById('notification').innerHTML = "";
+							document.getElementById("cart").innerHTML = '<img src="https://i.imgur.com/cguhi5y.png?1"/>';
+							items = document.getElementById("data").style.visibility = "hidden";
+							document.getElementById("cart").style.visibility = "hidden";
+							document.getElementById("emptyCart").style.visibility = "hidden";
+							document.getElementById("prompt").style.visibility = "hidden";
+
+
+							getMethods();
+
+
+						}
+						emptyCart(0, cart.length);
+
+						//    document.getElementById("list").innerHTML = "";
+						//    document.getElementById('purchase').innerHTML = '';
+
+
+
+					})
+				}
+
+				// Get Methods
+				const getMethods = () => {
+					// let's show the method buttons
+
+					console.log(cart.length)
+					document.getElementById("navigation").innerHTML = '<div class="game" id="game">Play the garden game</div>';
+					let gameStart = document.getElementById('game');
+
+					gameStart.addEventListener("click", function() {
+						// alert("Watering the plants");
+						let e = 0;
+						let t = 0;
+
+						//  item.parentNode.removeChild(item);
+
+						///return false;
+						document.getElementById("navigation").innerHTML = '<div  class="tend" id="tend">Tend</div>' + '<div class="harvest" id="harvest">Harvest</div>' + '<div class="water" id="water">Water</div>';
+						let iconWater = document.getElementById('water');
+
+						iconWater.addEventListener("click", function() {
+							let waterLimit = e += 1;
+							if (waterLimit <= 3) {
+								alert("Please keep watering your plant.");
+								document.getElementById("showAction").innerHTML = '<p> watering #' + waterLimit + '</p>';
+								console.log("watering #", waterLimit)
+							} else if (t < 3) {
+								alert("Time to tend your garden.");
+								document.getElementById("showAction").innerHTML = '<p>Time to tend your garden.</p>';
+
+							} else {
+								alert("Time to harvest!")
+								console.log("Time to harvest!");
+							}
+						})
+						const iconTend = document.getElementById('tend');
+						iconTend.addEventListener("click", function() {
+							let tendLimit = t += 1;
+							if (e < 1) {
+								alert("Please water your garden first.");
+								document.getElementById("showAction").innerHTML = '<p>Please water your garden first.</p>';
+							} else if (tendLimit <= 3) {
+								alert("Please keep tending your plants.");
+								document.getElementById("showAction").innerHTML = '<p> tending #' + tendLimit + '</p>';
+								console.log("tending #", tendLimit)
+							} else if (e < 3) {
+								alert("Time to water your garden.");
+								document.getElementById("showAction").innerHTML = '<p>Time to water your garden.</p>';
+
+							} else {
+								alert("Time to harvest!");
+								console.log("Time to harvest!");
+							}
+						})
+
+						const iconHarvest = document.getElementById('harvest');
+						iconHarvest.addEventListener("click", function() {
+							if (e < 3 && t < 3) {
+								alert("Please, water and tend your plants first.")
+								document.getElementById("showAction").innerHTML = '<p> Please, water and tend your plants first.</p>';
+
+							} else if (e >= 3 && t >= 3) {
+								document.getElementById("navigation").innerHTML = '<div id="congrats"></div>';
+								setTimeout(function() {
+									document.getElementById("congrats").innerHTML = `<h2>Currently harvesting the plants!</h2>`;
+								}, 1000);
+								setTimeout(function() {
+									document.getElementById("congrats").innerHTML = `<h2>Congrats, You earned $${(Math.random() * 1000).toFixed(2)}!</h2>`;
+									t = 0;
+									e = 0;
+								}, 2000);
+								setTimeout(function() {
+									document.getElementById("congrats").innerHTML = "<h3>Play again?\nClick on items to cart to purchase!</h3>";
+									t = 0;
+									e = 0;
+								}, 4000);
+
+
+								document.getElementById("showAction").innerHTML = "";
+								document.getElementById("congrats").innerHTML = "";
+								document.getElementById("growing").innerHTML = '';
+								document.getElementById("growing-title").innerHTML = '';
+								items = document.getElementById("data").style.visibility = "visible";
+								document.getElementById("cart").style.visibility = "visible";
+								document.getElementById("emptyCart").style.visibility = "visible";
+								document.getElementById("prompt").style.visibility = "visible";
+							}
+
+						})
+
+					})
+				}
+
+
+
+				// Hide Cart
+				const hideList = () => {
+
+					//reset counter 
+					e = 0;
+					for (let i = 0; i < getList.length; i++) {
+						document.getElementById("list").innerHTML = "";
+						document.getElementById("navigation").innerHTML = "";
+						document.getElementById("growing-title").innerHTML = "";
+						document.getElementById("growing").innerHTML = "";
+						//  document.getElementById('notification').innerHTML = "";
+						show = document.getElementById("list").style.visibility = "hidden";
+
+
+					}
+
+					return cart;
+				}
+
+				// Toggle element visibility
+				seeds.addEventListener('click', function(e) {
+					if (show == "hidden" && cart.length != 0) {
+						showList();
+
+					} else if (cart.length < 0) {
+						alert("Your cart is empty");
+					} else {
+						hideList();
+					}
+				});
+
+			}
+
+			//const picked = document.getElementsByClassName('picked');
+
 
 		};
 
@@ -370,17 +477,17 @@ window.onload = () => {
 
 	}
 
+
 	var submitted = document.getElementById('submit');
 
 	submitted.onclick = function() {
 		query = mainInput.value;
 		query1 = mainInput1.value;
 
-        validate(query, query1);
+		validate(query, query1);
 
 		return false;
 
 
 	}
 }
-//cited images at google images 
