@@ -387,6 +387,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 				   purchaseItems.addEventListener("click", function(){
 		   
 					   for(let seed =0; seed <= dict.cart.length; seed++){
+						   if(seed < dict.cart.length){
 						   purchasedCart.push(dict.cart[seed].name);
    
 						   let index  = seed + 1;
@@ -404,7 +405,7 @@ document.getElementById("exit").innerHTML ='<button class="exit"id="exit">Exit A
 
 
 						   getMethods();
-   
+						   }
    
 					   }
 					   emptyCart2(0, dict.cart.length);
