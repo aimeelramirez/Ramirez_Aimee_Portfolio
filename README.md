@@ -41,6 +41,19 @@ Wordpress Site:
 | ----------- | ----------- |
 | Ramirez_Aimee_json | [jsdemo](./jsonDEMO)|
 
-### Attempt upon dictionary
+## Visuals
 
-<https://github.com/alramirez1/Ramirez_Aimee_Portfolio/tree/dictonary>
+### JS project
+
+[JS demo](./finalProject)
+
+![alt text](https://i.imgur.com/MKwonN8.png "Js project")
+
+### C# project
+
+[C# demo](https://i.imgur.com/gVIt4xE.mp4)
+![alt text](https://i.imgur.com/YqHPuZo.png "C# project")
+
+### Video Presentation
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/X990lbbwlFE/0.jpg)](http://www.youtube.com/watch?v=X990lbbwlFE)
