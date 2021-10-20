@@ -1,10 +1,10 @@
 # Ramirez_Aimee_Portfolio
 
-Link to Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio/>
+Link to Repo: <https://aimeelramirez.github.io/Ramirez_Aimee_Portfolio/>
 
-Clone: <https://github.com/alramirez1/Ramirez_Aimee_Portfolio.git>
+Clone: <https://github.com/aimeelramirez/Ramirez_Aimee_Portfolio.git>
 
-Live Repo: <https://alramirez1.github.io/Ramirez_Aimee_Portfolio>
+Live Repo: <https:///aimeelramirez.github.io/Ramirez_Aimee_Portfolio>
 
 Wordpress Site:
 <https://alramirez1.wordpress.com/>
